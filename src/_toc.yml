@@ -4,5 +4,10 @@
 format: jb-book
 root: index
 chapters:
-- file: intro
+- file: introduction
 - file: overview
+- file: getting-started
+- file: plugins
+- file: themes
+- file: data-management
+- file: acknowledgments
