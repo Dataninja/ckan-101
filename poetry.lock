@@ -214,6 +214,18 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "diagrams"
+version = "0.22.0"
+description = "Diagram as Code"
+category = "main"
+optional = false
+python-versions = ">=3.6,<4.0"
+
+[package.dependencies]
+graphviz = ">=0.13.2,<0.20.0"
+jinja2 = ">=2.10,<4.0"
+
+[[package]]
 name = "docutils"
 version = "0.17.1"
 description = "Docutils -- Python Documentation Utilities"
@@ -283,6 +295,19 @@ python-versions = ">=3.7"
 
 [package.dependencies]
 gitdb = ">=4.0.1,<5"
+
+[[package]]
+name = "graphviz"
+version = "0.19.2"
+description = "Simple Python interface for Graphviz"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+dev = ["tox (>=3)", "flake8", "pep8-naming", "wheel", "twine"]
+docs = ["sphinx (>=1.8)", "sphinx-autodoc-typehints", "sphinx-rtd-theme"]
+test = ["pytest (>=6)", "pytest-mock (>=3)", "mock (>=4)", "pytest-cov", "coverage"]
 
 [[package]]
 name = "greenlet"
@@ -1675,7 +1700,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "6e0f0091d99a75ac9b19387212a30614ae613ace57322176ff11aede0529d196"
+content-hash = "c8c4ce647a26369b4f839e5da3bf58d927232c5c1f6cce6e0479dbbb7bcb3fa2"
 
 [metadata.files]
 alabaster = []
@@ -1697,6 +1722,7 @@ colorama = []
 debugpy = []
 decorator = []
 defusedxml = []
+diagrams = []
 docutils = []
 entrypoints = []
 executing = []
@@ -1704,6 +1730,10 @@ fastjsonschema = []
 ghp-import = []
 gitdb = []
 gitpython = []
+graphviz = [
+    {file = "graphviz-0.19.2-py3-none-any.whl", hash = "sha256:c0a6ac9fadaa308c4ab0d526749c6e127425ec5a76644bbb03e2e04b19a9da9f"},
+    {file = "graphviz-0.19.2.zip", hash = "sha256:7c90cebc147c18bcdffcd3c76db58cbface5d45fe0247a2f3bfb144d32a8c77c"},
+]
 greenlet = []
 idna = []
 imagesize = []

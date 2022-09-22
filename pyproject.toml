@@ -9,6 +9,7 @@ license = "CC-BY"
 python = "^3.9"
 jupyter-book = "^0.13.1"
 ghp-import = "^2.1.0"
+diagrams = "^0.22.0"
 
 [tool.poetry.dev-dependencies]
 
