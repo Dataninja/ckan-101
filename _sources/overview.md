@@ -6,6 +6,8 @@
 
 ...
 
+![Schema dei servizi](../diagrams/services.png)
+
 ## Schema dati
 
 ...
