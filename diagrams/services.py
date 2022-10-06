@@ -4,33 +4,32 @@ from diagrams.onprem.search import Solr
 from diagrams.onprem.inmemory import Redis
 from diagrams.custom import Custom
 
-graph_attr = {
-  "margin":"-2, -2"
-}
+diagram_attr = { "margin": "-2, -2" }
+cluster_attr = { "margin": "10, 10" }
 
 with Diagram(
   "CKAN Services schema\nCC0 - Public domain",
-  graph_attr=graph_attr,
+  graph_attr=diagram_attr,
   filename="services",
   show=False,
   direction="TB"
 ):
 
-    with Cluster("Cache database"):
+    with Cluster("Cache database", graph_attr=cluster_attr):
 
       cache_database = Redis("Redis")
 
-    with Cluster("Main database"):
+    with Cluster("Main database", graph_attr=cluster_attr):
 
       main_database = Postgresql("PostgreSQL")
       main_database_volume = Custom("pg_data", "icons/volume.png")
 
-    with Cluster("Search engine"):
+    with Cluster("Search engine", graph_attr=cluster_attr):
 
       search_engine = Solr("Solr")
       search_engine_volume = Custom("solr_data", "icons/volume.png")
 
-    with Cluster("CKAN"):
+    with Cluster("CKAN", graph_attr=cluster_attr):
 
       ckan_core = Custom("", "icons/ckan.png")
       ckan_datapusher = Custom("Datapusher", "icons/datapusher.png")

@@ -41,7 +41,3 @@
 ### Alternative
 
 ...
-
-## Laboratorio
-
-...

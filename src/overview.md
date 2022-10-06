@@ -2,27 +2,17 @@
 
 ...
 
-## Schema dei servizi
+## Servizi
 
 ...
 
 ![Schema dei servizi](../diagrams/services.png)
 
-## Schema dati
+## Entità
 
 ...
 
-### Entità
-
-...
-
-### Attributi
-
-...
-
-### Relazioni
-
-...
+![Schema delle entità](../diagrams/entities.png)
 
 ## Database
 
@@ -53,9 +43,5 @@
 ...
 
 ## Command Line Interface (CLI)
-
-...
-
-## Laboratorio
 
 ...
