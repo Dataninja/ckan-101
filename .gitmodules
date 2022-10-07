@@ -1,3 +1,6 @@
 [submodule "ckan"]
-	path = lab/ckan
+	path = lab/src/ckan
 	url = https://github.com/ckan/ckan.git
+[submodule "lab/datapusher"]
+	path = lab/src/datapusher
+	url = https://github.com/ckan/datapusher.git

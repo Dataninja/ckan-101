@@ -50,7 +50,11 @@
 
 ...
 
-#### Database
+#### Postgres data
+
+...
+
+#### Solr data
 
 ...
 
