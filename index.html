@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/global.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -304,12 +305,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indice-dei-contenuti">
+   Indice dei contenuti
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#note">
+   Note
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -321,6 +351,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indice-dei-contenuti">
+   Indice dei contenuti
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#note">
+   Note
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -330,7 +378,21 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="benvenut">
 <h1>Benvenutə<a class="headerlink" href="#benvenut" title="Link a questa intestazione">#</a></h1>
-<p>…</p>
+<blockquote>
+<div><p>CKAN is an open-source DMS (data management system) for powering data hubs and data portals. CKAN makes it easy to publish, share and use data. It powers hundreds of data portals worldwide.</p>
+</div></blockquote>
+<p>Questo corso copre le basi di CKAN (uso, amministrazione e sviluppo) ed è rivolto primariamente a sviluppatori e amministratori di sistema.</p>
+<p>Le competenze pregresse richieste riguardano l’uso di <a class="reference external" href="https://www.linux.org/">Linux</a>, di <a class="reference external" href="https://git-scm.com/">Git</a>, di <a class="reference external" href="https://www.docker.com/">Docker</a> e <a class="reference external" href="https://docs.docker.com/compose/">Docker Compose</a>, di <a class="reference external" href="https://www.python.org/">Python</a>.</p>
+<p>Il corso si articola in 6 lezioni, di cui due introduttive (contesto e architettura), una di amministrazione (installazione e configurazione), due di sviluppo (plugin e temi), una di uso dei contenuti.
+A ogni lezione è associato un laboratorio pratico.</p>
+<p>Risorse utili:</p>
+<ul class="simple">
+<li><p>sito ufficiale del progetto: <a class="reference external" href="https://ckan.org/">https://ckan.org/</a></p></li>
+<li><p>repository ufficiali: <a class="reference external" href="https://github.com/ckan">https://github.com/ckan</a></p></li>
+<li><p>codice sorgente: <a class="reference external" href="https://github.com/ckan/ckan">https://github.com/ckan/ckan</a></p></li>
+</ul>
+<section id="indice-dei-contenuti">
+<h2>Indice dei contenuti<a class="headerlink" href="#indice-dei-contenuti" title="Link a questa intestazione">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduzione</a></li>
@@ -342,6 +404,16 @@ title="Print to PDF"
 <li class="toctree-l1"><a class="reference internal" href="acknowledgments.html">Ringraziamenti</a></li>
 </ul>
 </div>
+</section>
+<section id="note">
+<h2>Note<a class="headerlink" href="#note" title="Link a questa intestazione">#</a></h2>
+<p>Questa documentazione è scritta in <a class="reference external" href="https://www.markdownguide.org/">Markdown</a> e generata da <a class="reference external" href="https://jupyterbook.org/">Jupyter Book</a> (cartella <code class="docutils literal notranslate"><span class="pre">src/</span></code>).</p>
+<p>I diagrammi sono generati in Python con il pacchetto <a class="reference external" href="https://diagrams.mingrammer.com/">Diagrams</a> (cartella <code class="docutils literal notranslate"><span class="pre">diagrams/</span></code>).</p>
+<p>L’ambiente virtuale e le dipendenze sono gestiti mediante <a class="reference external" href="https://python-poetry.org/">Poetry</a>.</p>
+<p>Tutto il necessario per il laboratorio è nella cartella <code class="docutils literal notranslate"><span class="pre">lab/</span></code>, che contiene i riferimenti ad altri repository pubblici mediante Git Submodules (es. <code class="docutils literal notranslate"><span class="pre">modules/ckan/</span></code> e <code class="docutils literal notranslate"><span class="pre">modules/datapusher/</span></code>).</p>
+<p>Tutto il codice sorgente è pubblicato su <a class="reference external" href="https://github.com/">Github</a> all’indirizzo <a class="reference external" href="https://github.com/Dataninja/ckan-101">Dataninja/ckan-101</a>.</p>
+<p>Questa documentazione è visibile all’indirizzo <a class="reference external" href="https://dataninja.github.io/ckan-101/">dataninja.github.io/ckan-101</a> grazie a <a class="reference external" href="https://pages.github.com/">Github Pages</a>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
