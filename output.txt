@@ -1,6 +1,6 @@
-introduction.md:97: [redirected permanently] http://data.gov to https://data.gov/
 introduction.md:97: [redirected permanently] http://data.gov.uk to https://www.data.gov.uk/
 introduction.md:91: [redirected permanently] http://Schema.org to https://schema.org/
-example.md:53: [redirected with Found] https://jupyterbook.org to https://jupyterbook.org/en/stable/
+introduction.md:97: [redirected permanently] http://data.gov to https://data.gov/
 index.md:24: [redirected with Found] https://jupyterbook.org/ to https://jupyterbook.org/en/stable/
+example.md:53: [redirected with Found] https://jupyterbook.org to https://jupyterbook.org/en/stable/
 example.md:15: [redirected with Found] https://jupyterbook.org/content/myst.html to https://jupyterbook.org/en/stable/content/myst.html

@@ -467,35 +467,70 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="panoramica">
 <h1>Panoramica<a class="headerlink" href="#panoramica" title="Link a questa intestazione">#</a></h1>
-<p>…</p>
+<p>CKAN è un software monolitico, ma con una struttura modulare del codice.</p>
+<p>Separa la gestione dei dati dalla logica di business, ma non il backend dal frontend.</p>
+<p>Fa uso di una serie di database specializzati per offrire funzionalità avanzate: persistenza e query dei dati, ricerca avanzata anche full-text, cache delle risposte.</p>
+<p>Offre una <a class="reference external" href="https://docs.ckan.org/en/2.9/api/">Web API</a> molto ricca per l’integrazione con altri sistemi,
+per cui può essere anche usato come <a class="reference external" href="https://jamstack.org/headless-cms/">Headless CMS</a>
+(vedi il progetto <a class="reference external" href="https://github.com/datopian/portal.js/tree/main/examples/ckan">Portal.js</a>).</p>
 <section id="servizi">
 <h2>Servizi<a class="headerlink" href="#servizi" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
+<p>Il servizio principale è CKAN stesso, un’applicazione Python / Flask / Jinja2.</p>
+<p>I dati sono gestiti all’interno di un database <a class="reference external" href="https://www.postgresql.org/">PostgreSQL</a>, in particolare nella sua versione <a class="reference external" href="https://postgis.net/">PostGIS</a>.</p>
+<p>Il motore di ricerca interno è gestito da <a class="reference external" href="https://solr.apache.org/">Solr</a> (vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/user-guide.html#search-in-detail">documentazione</a>),
+mentre <a class="reference external" href="https://redis.io/">Redis</a> è usato come cache delle risposte HTTP per velocizzare la navigazione e limitare le query al database.</p>
+<p>Per le funzionalità di gestione e preview delle risorse è consigliato anche l’uso di <a class="reference external" href="https://github.com/ckan/datapusher">Datapusher</a>, un componente che indicizza automaticamente i dati nel database per renderli ricercabili.</p>
 <p><img alt="Schema dei servizi" src="_images/services.png" /></p>
 </section>
 <section id="entita">
 <h2>Entità<a class="headerlink" href="#entita" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
+<p>Ad alto livello, le entità rappresentate in CKAN sono le seguenti:</p>
+<ul class="simple">
+<li><p><strong>Dataset</strong> (storicamente chiamato anche <em>package</em>) - Si tratta dei set di metadati</p></li>
+<li><p><strong>Resource</strong> - Si tratta dei dati veri o propri o dei riferimenti a essi (inclusi URI a web service)</p></li>
+<li><p><strong>Group</strong> - I dataset possono essere inseriti in gruppi personalizzati (es. per categoria o argomento)</p></li>
+<li><p><strong>Tag</strong> - A ogni dataset possono essere associate tag per una sua categorizzazione tematica</p></li>
+<li><p><strong>Vocabulary</strong> - Le tag disponibili possono far parte di vocabolari controllati personalizzati (vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/maintaining/tag-vocabularies.html">documentazione</a>)</p></li>
+<li><p><strong>User</strong> - Sono gli account utente che possono operare in scrittura (per esempio per creare o modificare dataset), sono previsti due ruoli con privilegi differenziati: <em>publisher</em> e <em>administrator</em></p></li>
+<li><p><strong>Organization</strong> - Si tratta delle organizzazioni titolari dei dataset pubblicati, gli utenti <em>publisher</em> possono essere associati alle organizzazioni</p></li>
+<li><p><strong>Activity</strong> - Ogni azione di un utente è registrata in un log di attività</p></li>
+<li><p><strong>Rating</strong> - Gli utenti autenticati possono dare esperimere un voto di apprezzamento o meno per un dataset</p></li>
+</ul>
 <p><img alt="Schema delle entità" src="_images/entities.png" /></p>
 </section>
 <section id="database">
 <h2>Database<a class="headerlink" href="#database" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
+<p>I database sono servizi esterni la cui esecuzione è indipendente da CKAN.
+Possono essere installati ed eseguiti sulla stessa macchina, all’interno di container opportunamente orchestrati, in un cluster in cloud, o in ambienti misti
+(es. CKAN, Solr e Redis in container, ma PostgreSQL on-premise).</p>
 <section id="postgresql">
 <h3>PostgreSQL<a class="headerlink" href="#postgresql" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
+<blockquote>
+<div><p>PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</p>
+</div></blockquote>
+<p>Sito ufficiale: <a class="reference external" href="https://www.postgresql.org/">postgresql.org</a>.</p>
 <section id="postgis">
 <h4>PostGIS<a class="headerlink" href="#postgis" title="Link a questa intestazione">#</a></h4>
-<p>…</p>
+<blockquote>
+<div><p>PostGIS is a spatial database extender for PostgreSQL object-relational database. It adds support for geographic objects allowing location queries to be run in SQL.</p>
+</div></blockquote>
+<p>Sito ufficiale: <a class="reference external" href="https://postgis.net/">postgis.net</a>.</p>
+<p>Per supportare di default i dati geospaziali e funzionalità di ricerca geografica dei dataset, per le ultime versioni di CKAN si consiglia l’uso di PostGIS invece che di PostgreSQL base.</p>
 </section>
 </section>
 <section id="solr">
 <h3>Solr<a class="headerlink" href="#solr" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
+<blockquote>
+<div><p>Solr is the popular, blazing-fast, open source enterprise search platform built on Apache Lucene.</p>
+</div></blockquote>
+<p>Sito ufficiale: <a class="reference external" href="https://solr.apache.org/">solr.apache.org</a>.</p>
 </section>
 <section id="redis">
 <h3>Redis<a class="headerlink" href="#redis" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
+<blockquote>
+<div><p>The open source, in-memory data store used by millions of developers as a database, cache, streaming engine, and message broker.</p>
+</div></blockquote>
+<p>Sito ufficiale: <a class="reference external" href="https://redis.io/">redis.io</a>.</p>
 </section>
 </section>
 <section id="struttura-del-sito">
@@ -508,7 +543,12 @@ title="Print to PDF"
 </section>
 <section id="command-line-interface-cli">
 <h2>Command Line Interface (CLI)<a class="headerlink" href="#command-line-interface-cli" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
+<p>Oltre all’interfaccia grafica e alle Web API, esiste anche un’interfaccia a linea di comando molto versatile: <code class="docutils literal notranslate"><span class="pre">ckan</span></code> (storicamente si chiamava <code class="docutils literal notranslate"><span class="pre">paster</span></code>, vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/maintaining/cli.html">documentazione</a>).</p>
+<p>Tutte le informazioni su un’istanza di CKAN sono contenute nel file di configurazione <code class="docutils literal notranslate"><span class="pre">ckan.ini</span></code>, da cui <code class="docutils literal notranslate"><span class="pre">ckan</span></code> prende tutte le informazioni necessarie per interagire con l’istanza in esecuzione.</p>
+<p>Modello di comando: <code class="docutils literal notranslate"><span class="pre">ckan</span> <span class="pre">-c</span> <span class="pre">/etc/ckan/default/production.ini</span> <span class="pre">command</span> <span class="pre">[subcommand]</span> <span class="pre">[...options]</span></code>.</p>
+<p>Esempio: <code class="docutils literal notranslate"><span class="pre">ckan</span> <span class="pre">-c</span> <span class="pre">/etc/ckan/default/production.ini</span> <span class="pre">user</span> <span class="pre">list</span></code>.</p>
+<p>Nel caso di un’istanza eseguita all’interno di un Docker container gestito con Docker Compose, dall’host è possibile eseguire lo stesso comando con il prefisso <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span> <span class="pre">[nome</span> <span class="pre">container]</span></code>.</p>
+<p>Documentazione completa: <a class="reference external" href="https://docs.ckan.org/en/2.9/maintaining/cli.html">docs.ckan.org/en/2.9/maintaining/cli.html</a>.</p>
 </section>
 </section>
 
