@@ -158,7 +158,7 @@ Il core di CKAN e tutte le sue estensioni sono scritte in Python per la parte di
 
 Altre componenti rilevanti per il backend sono [Jinja2](https://pypi.org/project/Jinja2/2.11.3/) (v2) per il motore di template e [Flask](https://pypi.org/project/Flask/1.1.4/) (v1) come web framework (da CKAN 2.4, prima era [Pylons](https://pypi.org/project/Pylons/)).
 
-Per il frontend viene usato [Bootstrap](https://getbootstrap.com/docs/3.3/) (v3) come css framework.
+Per il frontend viene usato [Bootstrap](https://getbootstrap.com/docs/3.3/) (v3) come css framework e [jQuery](https://jquery.com/) come utility per Javascript.
 
 Fino alla versione [2.8](https://github.com/ckan/ckan/tree/2.8) (uscita nel maggio 2018 e tutt'ora supportata) il codice era compatibile solo con Python 2, il cui supporto è ufficialmente terminato il 31 dicembre 2019. La versione [2.9](https://github.com/ckan/ckan/tree/2.9) (uscita nell'agosto del 2020) è la prima a essere compatibile con Python 3, anche se mantiene ancora la retrocompatibilità.
 

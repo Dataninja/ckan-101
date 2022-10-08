@@ -13,7 +13,7 @@ with Diagram(
 
   # Thanks to https://boykoc.github.io/ckan/2019/10/21/ckan-283-database-diagram.html
   activity = Custom("Activity", "icons/activity.png") # User activities in CKAN related to an object.
-  topic = Custom("Topic", "icons/topic.png") # Represents simple way to manage collections of packages by topic.
+  group = Custom("Group", "icons/group.png") # Represents simple way to manage collections of packages by topic.
   organization = Custom("Organization", "icons/organization.png") # Represents simple way to manage collections of packages by topic.
   dataset = Custom("Dataset / Package", "icons/dataset.png") # Represents the dataset and related metadata.
   tag = Custom("Tag", "icons/tag.png") # Represents the tags for packages which are used to group/classify datasets, associates tags to packages.
@@ -28,7 +28,7 @@ with Diagram(
   user - organization
 
   dataset - organization
-  dataset - topic
+  dataset - group
   dataset - user
   dataset - tag
   dataset - rating
