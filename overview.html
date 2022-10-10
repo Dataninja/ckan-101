@@ -339,6 +339,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python">
+   Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#flask">
+     Flask
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jinja">
+     Jinja
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#database">
    Database
   </a>
@@ -356,26 +373,16 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#solr">
-     Solr
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#redis">
      Redis
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solr">
+     Solr
+    </a>
+   </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#struttura-del-sito">
-   Struttura del sito
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#struttura-del-codice-sorgente">
-   Struttura del codice sorgente
-  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#command-line-interface-cli">
@@ -412,6 +419,23 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python">
+   Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#flask">
+     Flask
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jinja">
+     Jinja
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#database">
    Database
   </a>
@@ -429,26 +453,16 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#solr">
-     Solr
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#redis">
      Redis
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solr">
+     Solr
+    </a>
+   </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#struttura-del-sito">
-   Struttura del sito
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#struttura-del-codice-sorgente">
-   Struttura del codice sorgente
-  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#command-line-interface-cli">
@@ -498,6 +512,36 @@ mentre <a class="reference external" href="https://redis.io/">Redis</a> è usato
 </ul>
 <p><img alt="Schema delle entità" src="_images/entities.png" /></p>
 </section>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Link a questa intestazione">#</a></h2>
+<blockquote>
+<div><p>Python is a programming language that lets you work quickly and integrate systems more effectively.</p>
+</div></blockquote>
+<p>Sito ufficiale: <a class="reference external" href="https://www.python.org/">python.org</a>.</p>
+<p>Tutorial: <code class="docutils literal notranslate"><span class="pre">lab/tutorials/python/</span></code> (<a class="reference external" href="https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/python">repo</a>).</p>
+<blockquote>
+<div><p>TIP - Lavorare con Python significa installare molti pacchetti aggiuntivi, per cui è altamente raccomandato usare <a class="reference external" href="https://docs.python.org/3/tutorial/venv.html">ambienti virtuali</a> e un gestore di pacchetti evoluto come <a class="reference external" href="https://python-poetry.org/">Poetry</a>.</p>
+</div></blockquote>
+<blockquote>
+<div><p>TIP - Se si vuole mantenere la compatibilità con sistemi che usano ancora il <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> invece del nuovo <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> si può effettuare la conversione con <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">export</span> <span class="pre">--without-hashes</span> <span class="pre">--format=requirements.txt</span> <span class="pre">&gt;</span> <span class="pre">requirements.txt</span></code>.</p>
+</div></blockquote>
+<section id="flask">
+<h3>Flask<a class="headerlink" href="#flask" title="Link a questa intestazione">#</a></h3>
+<blockquote>
+<div><p>Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.</p>
+</div></blockquote>
+<p>Sito ufficiale: <a class="reference external" href="https://flask.palletsprojects.com/en/2.2.x/">flask.palletsprojects.com</a>.</p>
+<p>Tutorial: <code class="docutils literal notranslate"><span class="pre">lab/tutorials/flask/</span></code> (<a class="reference external" href="https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/flask">repo</a>).</p>
+</section>
+<section id="jinja">
+<h3>Jinja<a class="headerlink" href="#jinja" title="Link a questa intestazione">#</a></h3>
+<blockquote>
+<div><p>Jinja is a fast, expressive, extensible templating engine. Special placeholders in the template allow writing code similar to Python syntax. Then the template is passed data to render the final document.</p>
+</div></blockquote>
+<p>Sito ufficiale: <a class="reference external" href="https://jinja.palletsprojects.com/en/3.1.x/">jinja.palletsprojects.com</a>.</p>
+<p>Tutorial: <code class="docutils literal notranslate"><span class="pre">lab/tutorials/jinja/</span></code> (<a class="reference external" href="https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/jinja">repo</a>).</p>
+</section>
+</section>
 <section id="database">
 <h2>Database<a class="headerlink" href="#database" title="Link a questa intestazione">#</a></h2>
 <p>I database sono servizi esterni la cui esecuzione è indipendente da CKAN.
@@ -509,6 +553,7 @@ Possono essere installati ed eseguiti sulla stessa macchina, all’interno di co
 <div><p>PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</p>
 </div></blockquote>
 <p>Sito ufficiale: <a class="reference external" href="https://www.postgresql.org/">postgresql.org</a>.</p>
+<p>Tutorial: <code class="docutils literal notranslate"><span class="pre">lab/tutorials/postgresql/</span></code> (<a class="reference external" href="https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/postgresql">repo</a>).</p>
 <section id="postgis">
 <h4>PostGIS<a class="headerlink" href="#postgis" title="Link a questa intestazione">#</a></h4>
 <blockquote>
@@ -516,14 +561,8 @@ Possono essere installati ed eseguiti sulla stessa macchina, all’interno di co
 </div></blockquote>
 <p>Sito ufficiale: <a class="reference external" href="https://postgis.net/">postgis.net</a>.</p>
 <p>Per supportare di default i dati geospaziali e funzionalità di ricerca geografica dei dataset, per le ultime versioni di CKAN si consiglia l’uso di PostGIS invece che di PostgreSQL base.</p>
+<p>Tutorial: <code class="docutils literal notranslate"><span class="pre">lab/tutorials/postgis/</span></code> (<a class="reference external" href="https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/postgis">repo</a>).</p>
 </section>
-</section>
-<section id="solr">
-<h3>Solr<a class="headerlink" href="#solr" title="Link a questa intestazione">#</a></h3>
-<blockquote>
-<div><p>Solr is the popular, blazing-fast, open source enterprise search platform built on Apache Lucene.</p>
-</div></blockquote>
-<p>Sito ufficiale: <a class="reference external" href="https://solr.apache.org/">solr.apache.org</a>.</p>
 </section>
 <section id="redis">
 <h3>Redis<a class="headerlink" href="#redis" title="Link a questa intestazione">#</a></h3>
@@ -531,20 +570,22 @@ Possono essere installati ed eseguiti sulla stessa macchina, all’interno di co
 <div><p>The open source, in-memory data store used by millions of developers as a database, cache, streaming engine, and message broker.</p>
 </div></blockquote>
 <p>Sito ufficiale: <a class="reference external" href="https://redis.io/">redis.io</a>.</p>
+<p>Tutorial: <code class="docutils literal notranslate"><span class="pre">lab/tutorials/redis/</span></code> (<a class="reference external" href="https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/redis">repo</a>).</p>
 </section>
+<section id="solr">
+<h3>Solr<a class="headerlink" href="#solr" title="Link a questa intestazione">#</a></h3>
+<blockquote>
+<div><p>Solr is the popular, blazing-fast, open source enterprise search platform built on Apache Lucene.</p>
+</div></blockquote>
+<p>Sito ufficiale: <a class="reference external" href="https://solr.apache.org/">solr.apache.org</a>.</p>
+<p>Tutorial: <code class="docutils literal notranslate"><span class="pre">lab/tutorials/solr/</span></code> (<a class="reference external" href="https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/solr">repo</a>).</p>
 </section>
-<section id="struttura-del-sito">
-<h2>Struttura del sito<a class="headerlink" href="#struttura-del-sito" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
-</section>
-<section id="struttura-del-codice-sorgente">
-<h2>Struttura del codice sorgente<a class="headerlink" href="#struttura-del-codice-sorgente" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
 </section>
 <section id="command-line-interface-cli">
 <h2>Command Line Interface (CLI)<a class="headerlink" href="#command-line-interface-cli" title="Link a questa intestazione">#</a></h2>
 <p>Oltre all’interfaccia grafica e alle Web API, esiste anche un’interfaccia a linea di comando molto versatile: <code class="docutils literal notranslate"><span class="pre">ckan</span></code> (storicamente si chiamava <code class="docutils literal notranslate"><span class="pre">paster</span></code>, vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/maintaining/cli.html">documentazione</a>).</p>
-<p>Tutte le informazioni su un’istanza di CKAN sono contenute nel file di configurazione <code class="docutils literal notranslate"><span class="pre">ckan.ini</span></code>, da cui <code class="docutils literal notranslate"><span class="pre">ckan</span></code> prende tutte le informazioni necessarie per interagire con l’istanza in esecuzione.</p>
+<p>Tutte le informazioni su un’istanza di CKAN sono contenute nel file di configurazione <code class="docutils literal notranslate"><span class="pre">ckan.ini</span></code> (storicamente <code class="docutils literal notranslate"><span class="pre">production.ini</span></code>, nome ancora presente nel Dockerfile ufficiale),
+da cui <code class="docutils literal notranslate"><span class="pre">ckan</span></code> prende tutte le informazioni necessarie per interagire con l’istanza in esecuzione.</p>
 <p>Modello di comando: <code class="docutils literal notranslate"><span class="pre">ckan</span> <span class="pre">-c</span> <span class="pre">/etc/ckan/default/production.ini</span> <span class="pre">command</span> <span class="pre">[subcommand]</span> <span class="pre">[...options]</span></code>.</p>
 <p>Esempio: <code class="docutils literal notranslate"><span class="pre">ckan</span> <span class="pre">-c</span> <span class="pre">/etc/ckan/default/production.ini</span> <span class="pre">user</span> <span class="pre">list</span></code>.</p>
 <p>Nel caso di un’istanza eseguita all’interno di un Docker container gestito con Docker Compose, dall’host è possibile eseguire lo stesso comando con il prefisso <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span> <span class="pre">[nome</span> <span class="pre">container]</span></code>.</p>
