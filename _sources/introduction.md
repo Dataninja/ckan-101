@@ -200,5 +200,5 @@ Sul mercato sono presenti numerose soluzioni enterprise, la più famosa forse è
 
 Attività proposte:
 
-1. Esplorazione guidata del portale open data della Regione Toscana ([dati.toscana.it](https://dati.toscana.it/)) e del portale di [INGV](https://data.ingv.it/).
+1. Esplorazione guidata del portale open data della Regione Toscana ([dati.toscana.it](https://dati.toscana.it/)) e del portale di INGV ([data.ingv.it](https://data.ingv.it/)).
 2. Censimento dei portali open data italiani basati su CKAN: [forms.gle/QdZyi7GrQP5sisF47](https://forms.gle/QdZyi7GrQP5sisF47).
