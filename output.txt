@@ -1,6 +1,8 @@
 introduction.md:97: [redirected permanently] http://data.gov.uk to https://www.data.gov.uk/
 introduction.md:91: [redirected permanently] http://Schema.org to https://schema.org/
 introduction.md:97: [redirected permanently] http://data.gov to https://data.gov/
-index.md:24: [redirected with Found] https://jupyterbook.org/ to https://jupyterbook.org/en/stable/
+introduction.md:204: [redirected with Found] https://forms.gle/QdZyi7GrQP5sisF47 to https://docs.google.com/forms/d/e/1FAIpQLSdfDd5OQaiz9YKPZIJkoMGfAQ_H2ctplh91C1YGC8vZmpseIQ/viewform?usp=send_form
+index.md:19: [redirected with Found] https://forms.gle/95ioF34MEfrMBzHh7 to https://docs.google.com/forms/d/e/1FAIpQLSfIuZzDZ9APodtro0tcpvZSM0SeKhTXTVYc9MJLiGT5cOTJkw/viewform?usp=send_form
 example.md:53: [redirected with Found] https://jupyterbook.org to https://jupyterbook.org/en/stable/
+index.md:28: [redirected with Found] https://jupyterbook.org/ to https://jupyterbook.org/en/stable/
 example.md:15: [redirected with Found] https://jupyterbook.org/content/myst.html to https://jupyterbook.org/en/stable/content/myst.html
