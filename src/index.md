@@ -14,6 +14,10 @@ Risorse utili:
 - repository ufficiali: https://github.com/ckan
 - codice sorgente: https://github.com/ckan/ckan
 
+## Prima di cominciare
+
+Questionario di self-assessment (anonimo): [forms.gle/95ioF34MEfrMBzHh7](https://forms.gle/95ioF34MEfrMBzHh7).
+
 ## Indice dei contenuti
 
 ```{tableofcontents}

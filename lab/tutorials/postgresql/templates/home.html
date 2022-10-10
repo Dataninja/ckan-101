@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+    {{ title }}
+  </title>
+</head>
+
+<body>
+  <h1>Welcome to {{ title }}!</h1>
+  <nav>
+    <ul>
+      {% for page in pages %}
+      <li><a href="/{{ page }}">{{ page.title() }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <p>Datetime: {{ datetime }}</p>
+</body>
+</html>

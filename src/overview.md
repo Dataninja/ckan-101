@@ -39,6 +39,34 @@ Ad alto livello, le entità rappresentate in CKAN sono le seguenti:
 
 ![Schema delle entità](../diagrams/entities.png)
 
+## Python
+
+> Python is a programming language that lets you work quickly and integrate systems more effectively.
+
+Sito ufficiale: [python.org](https://www.python.org/).
+
+Tutorial: `lab/tutorials/python/` ([repo](https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/python)).
+
+> TIP - Lavorare con Python significa installare molti pacchetti aggiuntivi, per cui è altamente raccomandato usare [ambienti virtuali](https://docs.python.org/3/tutorial/venv.html) e un gestore di pacchetti evoluto come [Poetry](https://python-poetry.org/).
+
+> TIP - Se si vuole mantenere la compatibilità con sistemi che usano ancora il `requirements.txt` invece del nuovo `pyproject.toml` si può effettuare la conversione con `poetry export --without-hashes --format=requirements.txt > requirements.txt`.
+
+### Flask
+
+> Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.
+
+Sito ufficiale: [flask.palletsprojects.com](https://flask.palletsprojects.com/en/2.2.x/).
+
+Tutorial: `lab/tutorials/flask/` ([repo](https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/flask)).
+
+### Jinja
+
+> Jinja is a fast, expressive, extensible templating engine. Special placeholders in the template allow writing code similar to Python syntax. Then the template is passed data to render the final document.
+
+Sito ufficiale: [jinja.palletsprojects.com](https://jinja.palletsprojects.com/en/3.1.x/).
+
+Tutorial: `lab/tutorials/jinja/` ([repo](https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/jinja)).
+
 ## Database
 
 I database sono servizi esterni la cui esecuzione è indipendente da CKAN.
@@ -51,6 +79,8 @@ Possono essere installati ed eseguiti sulla stessa macchina, all'interno di cont
 
 Sito ufficiale: [postgresql.org](https://www.postgresql.org/).
 
+Tutorial: `lab/tutorials/postgresql/` ([repo](https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/postgresql)).
+
 #### PostGIS
 
 > PostGIS is a spatial database extender for PostgreSQL object-relational database. It adds support for geographic objects allowing location queries to be run in SQL.
@@ -59,11 +89,7 @@ Sito ufficiale: [postgis.net](https://postgis.net/).
 
 Per supportare di default i dati geospaziali e funzionalità di ricerca geografica dei dataset, per le ultime versioni di CKAN si consiglia l'uso di PostGIS invece che di PostgreSQL base.
 
-### Solr
-
-> Solr is the popular, blazing-fast, open source enterprise search platform built on Apache Lucene.
-
-Sito ufficiale: [solr.apache.org](https://solr.apache.org/).
+Tutorial: `lab/tutorials/postgis/` ([repo](https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/postgis)).
 
 ### Redis
 
@@ -71,19 +97,22 @@ Sito ufficiale: [solr.apache.org](https://solr.apache.org/).
 
 Sito ufficiale: [redis.io](https://redis.io/).
 
-## Struttura del sito
+Tutorial: `lab/tutorials/redis/` ([repo](https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/redis)).
 
-...
+### Solr
 
-## Struttura del codice sorgente
+> Solr is the popular, blazing-fast, open source enterprise search platform built on Apache Lucene.
 
-...
+Sito ufficiale: [solr.apache.org](https://solr.apache.org/).
+
+Tutorial: `lab/tutorials/solr/` ([repo](https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/solr)).
 
 ## Command Line Interface (CLI)
 
 Oltre all'interfaccia grafica e alle Web API, esiste anche un'interfaccia a linea di comando molto versatile: `ckan` (storicamente si chiamava `paster`, vedi [documentazione](https://docs.ckan.org/en/2.9/maintaining/cli.html)).
 
-Tutte le informazioni su un'istanza di CKAN sono contenute nel file di configurazione `ckan.ini`, da cui `ckan` prende tutte le informazioni necessarie per interagire con l'istanza in esecuzione.
+Tutte le informazioni su un'istanza di CKAN sono contenute nel file di configurazione `ckan.ini` (storicamente `production.ini`, nome ancora presente nel Dockerfile ufficiale),
+da cui `ckan` prende tutte le informazioni necessarie per interagire con l'istanza in esecuzione.
 
 Modello di comando: `ckan -c /etc/ckan/default/production.ini command [subcommand] [...options]`.
 

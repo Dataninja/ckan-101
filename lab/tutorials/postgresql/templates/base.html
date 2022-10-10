@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+    {% block title %}
+    {{ title }}
+    {% endblock title %}
+  </title>
+</head>
+
+<body>
+  {% block content %}
+  <h1>{{ title }}!</h1>
+  <p>{{ content }}</p>
+  {% endblock content %}
+  <p>Updated at {{ datetime }}</p>
+  <p><a href="/">Back</a></p>
+</body>
+</html>

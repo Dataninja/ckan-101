@@ -195,3 +195,10 @@ Oltre CKAN ci sono altri DMS open source disponibili, il più famoso dei quali �
 Sempre ispirato a CKAN c'è anche [JKAN](https://jkan.io/), un DMS molto leggero basato sul generatore di siti statici [Jekyll](https://jekyllrb.com/).
 
 Sul mercato sono presenti numerose soluzioni enterprise, la più famosa forse è [Socrata](https://www.tylertech.com/products/data-insights), alla base del [portale open data della Regione Lombardia](https://dati.lombardia.it/).
+
+## Laboratorio
+
+Attività proposte:
+
+1. Esplorazione guidata del portale open data della Regione Toscana ([dati.toscana.it](https://dati.toscana.it/)) e del portale di INGV ([data.ingv.it](https://data.ingv.it/)).
+2. Censimento dei portali open data italiani basati su CKAN: [forms.gle/QdZyi7GrQP5sisF47](https://forms.gle/QdZyi7GrQP5sisF47).
