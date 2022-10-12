@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "lab-flask"
+name = "ckan101-lab-postgresql"
 version = "0.1.0"
 description = ""
 authors = ["Alessio Cimarelli <jenkin@dataninja.it>"]
