@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+
+  solr:
+    volumes:
+      - ./solrconfig.xml:/var/solr/data/reuters/conf/solrconfig.xml

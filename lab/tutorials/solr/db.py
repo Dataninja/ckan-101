@@ -1,6 +1,6 @@
 import os, pysolr, nltk
 
-solr = pysolr.Solr(f"http://{os.getenv('SOLR_HOST', 'localhost')}:8983/solr/gettingstarted/", always_commit=True)
+solr = pysolr.Solr(f"http://{os.getenv('SOLR_HOST', 'localhost')}:8983/solr/reuters/", always_commit=True)
 
 nltk.download('reuters')
 

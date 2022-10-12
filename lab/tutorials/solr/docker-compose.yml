@@ -8,9 +8,7 @@ services:
       - "8983:8983"
     command:
       - solr-precreate
-      - gettingstarted
-    volumes:
-      - ./solrconfig.xml:/var/solr/data/gettingstarted/conf/solrconfig.xml
+      - reuters
 
   app:
     build: .
