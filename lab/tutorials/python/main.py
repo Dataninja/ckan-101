@@ -1,6 +1,8 @@
 import sys
+from random import randint
 
 if len(sys.argv) > 1:
   print(f"Hello {sys.argv[1]}!")
 else:
-  print(f"Hello world!")
+  for n in range(randint(1,10)):
+    print(f"{n+1}. Hello world!")
