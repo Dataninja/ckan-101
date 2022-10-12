@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+</head>
+
+<body>
+  <h1>{{ title }}</h1>
+  <p>{{ content }}</p>
+  <ol>
+    {% for document in documents %}
+    <li id="mlt-{{ document.id }}">
+      [ <a href="/similar?id={{ document.id }}">{{ document.id }}</a> ]
+      {{ document.take_txt_en }}
+    </li>
+    {% endfor %}
+  </ol>
+  <p>Updated at {{ datetime }}</p>
+  <p><a href="/">Back</a></p>
+</body>
+</html>

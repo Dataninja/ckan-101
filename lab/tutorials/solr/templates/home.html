@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+    {{ title }}
+  </title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="static/index.js"></script>
+</head>
+
+<body>
+  <h1>Welcome to {{ title }}!</h1>
+  <p>The Reuters-21578 benchmark corpus, ApteMod version [ <a href="https://www.nltk.org/nltk_data/" target="_blank">download</a> (n. 92) ]</p>
+  <p>The copyright for the text of newswire articles and Reuters annotations in the Reuters-21578 collection resides with Reuters Ltd. Reuters Ltd. and Carnegie Group, Inc. have agreed to allow the free distribution of this data *for research purposes only*. If you publish results based on this data set, please acknowledge its use, refer to the data set by the name 'Reuters-21578, Distribution 1.0', and inform your readers of the current location of the data set.</p>
+  <form id="search-form">
+    <input id="search-value" type="text" placeholder="Cerca..." />
+    <input type="submit" value="Cerca">
+  </form>
+  <ol id="search-results"></ol>
+  <p>Datetime: {{ datetime }}</p>
+</body>
+</html>

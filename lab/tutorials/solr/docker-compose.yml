@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  solr:
+    image: solr:8
+    ports:
+      - "8983:8983"
+    command:
+      - solr-precreate
+      - gettingstarted
+    volumes:
+      - ./solrconfig.xml:/var/solr/data/gettingstarted/conf/solrconfig.xml
+
+  app:
+    build: .
+    environment:
+      - SOLR_HOST=solr
+    ports:
+      - 5000:5000

@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ckan101-lab-solr"
+version = "0.1.0"
+description = ""
+authors = ["Alessio Cimarelli <jenkin@dataninja.it>"]
+license = "CC0"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Flask = "^2.2.2"
+gunicorn = "^20.1.0"
+Jinja2 = "^3.1.2"
+pysolr = "^3.9.0"
+nltk = "^3.7"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
