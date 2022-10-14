@@ -3,14 +3,14 @@ version: '3'
 services:
 
   db:
-    image: postgis/postgis:14-3.3
+    image: postgis/postgis:14-3.3-alpine
     environment:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     ports:
       - 5432:5432
 
   adminer:
-    image: adminer
+    image: adminer:4
     ports:
       - "8080:8080"
 

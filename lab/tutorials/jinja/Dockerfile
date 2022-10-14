@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.9-alpine
 
 RUN mkdir -p /opt/app
 WORKDIR /opt/app
@@ -9,4 +9,4 @@ RUN pip install -r requirements.txt
 COPY . .
 
 ENTRYPOINT [ "gunicorn" ]
-CMD [ "--bind", "0.0.0.0:5000", "wsgi:app" ]
+CMD [ "--bind", "0.0.0.0:5000", "-w", "4", "wsgi:app" ]
