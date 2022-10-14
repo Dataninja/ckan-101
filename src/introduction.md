@@ -184,7 +184,7 @@ Al momento la versione stabile più recente è la [2.9.6](https://github.com/cka
 
 Le [estensioni ufficiali](https://github.com/orgs/ckan/repositories?q=ckanext-&type=all&language=&sort=) più utilizzate sono abbastanza aggiornate, per quelle di terze parti c'è un'utile [Awesome List](https://github.com/ckan/awesome-ckan).
 
-L'estensione [ckanext-dcatapit](https://github.com/ckan/ckanext-dcat) che aggiunge il supporto a DCAT-AP_IT è stata aggiornata e richiede [ckanext-dcat](https://github.com/ckan/ckanext-dcat) e (opzionalmente) [ckanext-spatial](https://github.com/ckan/ckanext-spatial), entrambe ufficiali.
+L'estensione [ckanext-dcatapit](https://github.com/geosolutions-it/ckanext-dcatapit) che aggiunge il supporto a DCAT-AP_IT è stata aggiornata e richiede [ckanext-dcat](https://github.com/ckan/ckanext-dcat) e (opzionalmente) [ckanext-spatial](https://github.com/ckan/ckanext-spatial), entrambe ufficiali.
 
 L'attuale roadmap non riporta una data prevista di rilascio della [versione 2.10](https://github.com/ckan/ckan/milestone/14), ma l'aggiornamento delle estensioni è tracciato in una [issue dedicata](https://github.com/ckan/ckan/issues/6787).
 
