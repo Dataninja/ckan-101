@@ -184,7 +184,7 @@ Al momento la versione stabile più recente è la [2.9.6](https://github.com/cka
 
 Le [estensioni ufficiali](https://github.com/orgs/ckan/repositories?q=ckanext-&type=all&language=&sort=) più utilizzate sono abbastanza aggiornate, per quelle di terze parti c'è un'utile [Awesome List](https://github.com/ckan/awesome-ckan).
 
-L'estensione [ckanext-dcatapit](https://github.com/ckan/ckanext-dcat) che aggiunge il supporto a DCAT-AP_IT è stata aggiornata e richiede [ckanext-dcat](https://github.com/ckan/ckanext-dcat) e (opzionalmente) [ckanext-spatial](https://github.com/ckan/ckanext-spatial), entrambe ufficiali.
+L'estensione [ckanext-dcatapit](https://github.com/geosolutions-it/ckanext-dcatapit) che aggiunge il supporto a DCAT-AP_IT è stata aggiornata e richiede [ckanext-dcat](https://github.com/ckan/ckanext-dcat) e (opzionalmente) [ckanext-spatial](https://github.com/ckan/ckanext-spatial), entrambe ufficiali.
 
 L'attuale roadmap non riporta una data prevista di rilascio della [versione 2.10](https://github.com/ckan/ckan/milestone/14), ma l'aggiornamento delle estensioni è tracciato in una [issue dedicata](https://github.com/ckan/ckan/issues/6787).
 
@@ -202,3 +202,6 @@ Attività proposte:
 
 1. Esplorazione guidata del portale open data della Regione Toscana ([dati.toscana.it](https://dati.toscana.it/)) e del portale di INGV ([data.ingv.it](https://data.ingv.it/)).
 2. Censimento dei portali open data italiani basati su CKAN: [forms.gle/QdZyi7GrQP5sisF47](https://forms.gle/QdZyi7GrQP5sisF47).
+
+<iframe title="Portali open data italiani basati su CKAN" aria-label="Tabella" id="datawrapper-chart-kGIGj" src="https://datawrapper.dwcdn.net/kGIGj/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none; margin-top: 2.75rem;" height="992"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
