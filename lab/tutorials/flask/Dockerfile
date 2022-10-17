@@ -1,4 +1,5 @@
-FROM python:3.9-alpine
+FROM python:3.9-slim
+#FROM python:3.9-alpine
 
 RUN mkdir -p /opt/app
 WORKDIR /opt/app
