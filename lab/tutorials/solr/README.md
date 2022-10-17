@@ -9,6 +9,8 @@ Build images and run containers: `docker-compose up --build -d` (production mode
 
 Mount custom configuration: `docker-compose -f docker-compose.yml -f docker-compose.custom.yml up -d solr`.
 
+Mount volume for data persistence: `docker-compose -f docker-compose.yml -f docker-compose.persistence.yml up -d solr`.
+
 ### Database
 
 Database initialization: `docker-compose exec app python db.py` (only the first time or after a docker-compose down).

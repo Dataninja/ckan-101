@@ -1,0 +1,10 @@
+version: '3'
+
+volumes:
+  solr_data:
+
+services:
+
+  solr:
+    volumes:
+      - solr_data:/var/solr
