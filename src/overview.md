@@ -115,6 +115,8 @@ Sito ufficiale: [reactjs.org](https://reactjs.org/).
 
 Tutorial: `lab/tutorials/react/` ([repo](https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/react)).
 
+> Warning: CKAN doesn't use React, this bonus tutorial shows the use of docker for frontend development and production deployment.
+
 ## Command Line Interface (CLI)
 
 Oltre all'interfaccia grafica e alle Web API, esiste anche un'interfaccia a linea di comando molto versatile: `ckan` (storicamente si chiamava `paster`, vedi [documentazione](https://docs.ckan.org/en/2.9/maintaining/cli.html)).
