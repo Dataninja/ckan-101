@@ -202,3 +202,6 @@ Attività proposte:
 
 1. Esplorazione guidata del portale open data della Regione Toscana ([dati.toscana.it](https://dati.toscana.it/)) e del portale di INGV ([data.ingv.it](https://data.ingv.it/)).
 2. Censimento dei portali open data italiani basati su CKAN: [forms.gle/QdZyi7GrQP5sisF47](https://forms.gle/QdZyi7GrQP5sisF47).
+
+<iframe title="Portali open data italiani basati su CKAN" aria-label="Tabella" id="datawrapper-chart-kGIGj" src="https://datawrapper.dwcdn.net/kGIGj/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none; margin-top: 2.75rem;" height="992"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+</script>
