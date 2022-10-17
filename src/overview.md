@@ -107,6 +107,14 @@ Sito ufficiale: [solr.apache.org](https://solr.apache.org/).
 
 Tutorial: `lab/tutorials/solr/` ([repo](https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/solr)).
 
+### React (bonus)
+
+> A JavaScript library for building user interfaces.
+
+Sito ufficiale: [reactjs.org](https://reactjs.org/).
+
+Tutorial: `lab/tutorials/react/` ([repo](https://github.com/Dataninja/ckan-101/tree/main/lab/tutorials/react)).
+
 ## Command Line Interface (CLI)
 
 Oltre all'interfaccia grafica e alle Web API, esiste anche un'interfaccia a linea di comando molto versatile: `ckan` (storicamente si chiamava `paster`, vedi [documentazione](https://docs.ckan.org/en/2.9/maintaining/cli.html)).
