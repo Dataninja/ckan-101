@@ -4,9 +4,9 @@ version: "3"
 
 services:
 
-  datapusher:
-    ports:
-      - "${DATAPUSHER_PORT}:8000"
+  # datapusher:
+  #   ports:
+  #     - "${DATAPUSHER_PORT}:8000"
 
   solr:
     ports:

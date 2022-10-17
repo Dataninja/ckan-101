@@ -1,5 +1,6 @@
 # docker-compose build && docker-compose up -d
 # If "docker-compose logs ckan" shows DB not ready, run "docker-compose restart ckan" a few times.
+# From modules/ckan/contrib/docker/docker-compose.yml
 version: "3"
 
 volumes:
@@ -14,7 +15,7 @@ services:
   ckan:
     #container_name: ckan_core
     build:
-      context: src/ckan/
+      context: modules/ckan/
       dockerfile: Dockerfile.py3
       args:
         - CKAN_SITE_URL=${CKAN_SITE_URL}
@@ -54,7 +55,7 @@ services:
   db:
     #container_name: ckan_db
     build:
-      context: src/ckan/
+      context: modules/ckan/
       dockerfile: contrib/docker/postgresql/Dockerfile
       args:
         - DS_RO_PASS=${DATASTORE_READONLY_PASSWORD}
@@ -71,7 +72,7 @@ services:
   solr:
     #container_name: ckan_solr
     build:
-      context: solr/
+      context: services/solr/
       dockerfile: Dockerfile
     volumes:
       - solr_data:/opt/solr/server/solr/ckan/data
