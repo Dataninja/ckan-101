@@ -334,8 +334,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#database-postgresql-o-postgis">
-     Database (PostgreSQL o PostGIS)
+    <a class="reference internal nav-link" href="#database-postgis">
+     Database (PostGIS)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -405,6 +405,23 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configurazione-iniziale">
+   Configurazione iniziale
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utente-di-amministrazione">
+     Utente di amministrazione
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#datastore">
+     Datastore
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#backup">
    Backup
   </a>
@@ -417,11 +434,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#localizzazione">
    Localizzazione
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#laboratorio">
-   Laboratorio
   </a>
  </li>
 </ul>
@@ -449,8 +461,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#database-postgresql-o-postgis">
-     Database (PostgreSQL o PostGIS)
+    <a class="reference internal nav-link" href="#database-postgis">
+     Database (PostGIS)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -520,6 +532,23 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configurazione-iniziale">
+   Configurazione iniziale
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utente-di-amministrazione">
+     Utente di amministrazione
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#datastore">
+     Datastore
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#backup">
    Backup
   </a>
@@ -534,11 +563,6 @@ title="Print to PDF"
    Localizzazione
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#laboratorio">
-   Laboratorio
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -551,25 +575,31 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="primi-passi">
 <h1>Primi passi<a class="headerlink" href="#primi-passi" title="Link a questa intestazione">#</a></h1>
-<p>…</p>
+<p>Il codice sorgente di CKAN è pubblicato su Github: <a class="reference external" href="https://github.com/ckan/ckan">https://github.com/ckan/ckan</a>.</p>
+<p>All’interno del <a class="reference external" href="https://github.com/Dataninja/ckan-101">repository di questo corso</a> è presente nella cartella <code class="docutils literal notranslate"><span class="pre">lab/modules/ckan</span></code> sotto forma di <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">git submodule</a>.</p>
+<p>Se hai clonato il repository con <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/Dataninja/ckan-101.git</span></code> puoi <em>popolare</em> la cartella <code class="docutils literal notranslate"><span class="pre">lab/modules/ckan</span></code> con la <a class="reference external" href="https://github.com/ckan/ckan/tree/ckan-2.9.6">versione ckan-2.9.6</a> con i comandi <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">init</span></code> e <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">update</span></code>.</p>
+<blockquote>
+<div><p>ATTENZIONE: la <a class="reference external" href="https://docs.ckan.org/en/2.9/maintaining/installing/install-from-docker-compose.html">guida completa</a> per l’installazione e l’esecuzione di CKAN in ambiente Docker utilizza configurazioni datate di <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> e <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> (ambiente Python2 invece di Python3, Solr v6 invece di v8, una vecchia immagine di Datapusher).</p>
+</div></blockquote>
+<p>Le configurazioni presentate in questo corso partono da quelle ufficiali, ma aggiornano tutte le dipendenze alle ultime versioni disponibili / compatibili.</p>
 <section id="servizi-e-container">
 <h2>Servizi e container<a class="headerlink" href="#servizi-e-container" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
-<section id="database-postgresql-o-postgis">
-<h3>Database (PostgreSQL o PostGIS)<a class="headerlink" href="#database-postgresql-o-postgis" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
+<p>Il <a class="reference external" href="https://github.com/ckan/ckan/blob/ckan-2.9.6/contrib/docker/docker-compose.yml">docker-compose.yml</a> ufficiale (in <code class="docutils literal notranslate"><span class="pre">lab/modules/ckan/contrib/docker/</span></code>) è replicato e modificato in <code class="docutils literal notranslate"><span class="pre">lab/docker-compose.yml</span></code>.</p>
+<section id="database-postgis">
+<h3>Database (PostGIS)<a class="headerlink" href="#database-postgis" title="Link a questa intestazione">#</a></h3>
+<p>Servizio <code class="docutils literal notranslate"><span class="pre">db</span></code> nel <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code>. Fa uso del <a class="reference external" href="https://github.com/ckan/ckan/blob/ckan-2.9.6/contrib/docker/postgresql/Dockerfile">Dockerfile ufficiale</a> (in <code class="docutils literal notranslate"><span class="pre">lab/modules/ckan/contrib/docker/postgresql</span></code>) e l’immagine si basa su <a class="reference external" href="https://hub.docker.com/r/mdillon/postgis/">postgis:11</a>.</p>
 </section>
 <section id="ckan">
 <h3>CKAN<a class="headerlink" href="#ckan" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
+<p>Servizio <code class="docutils literal notranslate"><span class="pre">ckan</span></code> nel <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code>. Fa uso del <a class="reference external" href="https://github.com/ckan/ckan/blob/ckan-2.9.6/Dockerfile.py3">Dockerfile ufficiale</a> (in <code class="docutils literal notranslate"><span class="pre">lab/modules/ckan/Dockerfile.py3</span></code>) e l’immagine si basa su <a class="reference external" href="https://hub.docker.com/_/ubuntu">ubuntu:focal</a>.</p>
 </section>
 <section id="redis">
 <h3>Redis<a class="headerlink" href="#redis" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
+<p>Servizio <code class="docutils literal notranslate"><span class="pre">redis</span></code> nel <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code>, basato sull”<a class="reference external" href="https://hub.docker.com/_/redis">immagie ufficiale</a>.</p>
 </section>
 <section id="solr">
 <h3>Solr<a class="headerlink" href="#solr" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
+<p>Servizio <code class="docutils literal notranslate"><span class="pre">solr</span></code> nel <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code>. Fa uso di un Dockerfile personalizzato (in <code class="docutils literal notranslate"><span class="pre">lab/services/solr/</span></code>) basato sull’immagine ufficiale <a class="reference external" href="https://hub.docker.com/r/ckan/ckan-solr">ckan/ckan-solr:2.9-solr8</a>.</p>
 </section>
 <section id="datapusher">
 <h3>Datapusher<a class="headerlink" href="#datapusher" title="Link a questa intestazione">#</a></h3>
@@ -578,34 +608,51 @@ title="Print to PDF"
 </section>
 <section id="orchestrazione-dei-container">
 <h2>Orchestrazione dei container<a class="headerlink" href="#orchestrazione-dei-container" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
+<p>A partire dai file di configurazione di Docker Compose della cartella <code class="docutils literal notranslate"><span class="pre">lab/</span></code> è possibile costruire le immagini di tutti i servizi con <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">build</span></code> ed eseguirne i relativi container con <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span></code>.</p>
+<p>Prima però è necessario configurare le variabili d’ambiente globali (file <code class="docutils literal notranslate"><span class="pre">.env</span></code>), i volumi per la persistenza dei dati e la personalizzazione delle configurazioni e le porte esposte dei vari servizi.</p>
 <section id="variabili-d-ambiente">
 <h3>Variabili d’ambiente<a class="headerlink" href="#variabili-d-ambiente" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
+<p>Il <a class="reference external" href="https://github.com/ckan/ckan/blob/ckan-2.9.6/contrib/docker/.env.template">file ufficiale</a> di configurazione (in <code class="docutils literal notranslate"><span class="pre">lab/modules/ckan/contrib/docker/.env.template</span></code>) è replicato e compilato in <code class="docutils literal notranslate"><span class="pre">lab/.env</span></code> e caricato da Docker Compose durante la fase di build delle immagini e all’esecuzione dei container.</p>
 </section>
 <section id="volumi">
 <h3>Volumi<a class="headerlink" href="#volumi" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
+<p>Sezione <code class="docutils literal notranslate"><span class="pre">volumes</span></code> nel <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code>. Per impostazione predefinita i volumi sono definiti come <a class="reference external" href="https://docs.docker.com/storage/volumes/">docker named volumes</a>, ma volendo possono essere montati su cartelle locali dell’host.</p>
 <section id="ckan-config">
 <h4>CKAN Config<a class="headerlink" href="#ckan-config" title="Link a questa intestazione">#</a></h4>
-<p>…</p>
+<p>Volume con la configurazione principale di CKAN, in particolare contiene il file <code class="docutils literal notranslate"><span class="pre">production.ini</span></code> (cartella interna al container: <code class="docutils literal notranslate"><span class="pre">/etc/ckan</span></code>).</p>
+<p>In caso di personalizzazione della configurazione (es. attivazione di estensioni o opzioni avanzate nel file <code class="docutils literal notranslate"><span class="pre">production.ini</span></code>) è utile montare un file modificabile usando anche la configurazione in <code class="docutils literal notranslate"><span class="pre">docker-compose.custom.yml</span></code> con <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.custom.yml</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">ckan</span></code>.</p>
 </section>
 <section id="ckan-home">
 <h4>CKAN Home<a class="headerlink" href="#ckan-home" title="Link a questa intestazione">#</a></h4>
-<p>…</p>
+<p>Volume con il codice sorgente e le eventuali estensioni aggiuntive (cartella interna al container: <code class="docutils literal notranslate"><span class="pre">/usr/lib/ckan</span></code>).</p>
 </section>
 <section id="ckan-storage">
 <h4>CKAN Storage<a class="headerlink" href="#ckan-storage" title="Link a questa intestazione">#</a></h4>
-<p>…</p>
+<p>Volume con i file delle risorse e le eventuali immagini caricate (cartella interna al container: <code class="docutils literal notranslate"><span class="pre">/var/lib/ckan</span></code>).</p>
 </section>
 <section id="postgres-data">
 <h4>Postgres data<a class="headerlink" href="#postgres-data" title="Link a questa intestazione">#</a></h4>
-<p>…</p>
+<p>Volume per la persistenza dei dati del database principale (cartella interna al container: <code class="docutils literal notranslate"><span class="pre">/var/lib/postgresql/data</span></code>).</p>
 </section>
 <section id="solr-data">
 <h4>Solr data<a class="headerlink" href="#solr-data" title="Link a questa intestazione">#</a></h4>
-<p>…</p>
+<p>Volume per la persistenza dei dati del motore di ricerca (cartella interna al container: <code class="docutils literal notranslate"><span class="pre">/opt/solr/server/solr/ckan/data</span></code>).</p>
+<p>In caso di personalizzazione della configurazione (es. opzioni avanzate nel file <code class="docutils literal notranslate"><span class="pre">schema.xml</span></code>) è utile montare un file modificabile usando anche la configurazione in <code class="docutils literal notranslate"><span class="pre">docker-compose.dev.yml</span></code> con <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.dev.yml</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">solr</span></code>.</p>
 </section>
+</section>
+</section>
+<section id="configurazione-iniziale">
+<h2>Configurazione iniziale<a class="headerlink" href="#configurazione-iniziale" title="Link a questa intestazione">#</a></h2>
+<section id="utente-di-amministrazione">
+<h3>Utente di amministrazione<a class="headerlink" href="#utente-di-amministrazione" title="Link a questa intestazione">#</a></h3>
+<p>L’installazione iniziale richiede la creazione diretta di un utente di amministrazione che poi potrà effettura il primo login e configurare il sito dall’interfaccia web.</p>
+<p>Eseguire <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span> <span class="pre">-T</span> <span class="pre">ckan</span> <span class="pre">/usr/local/bin/ckan</span> <span class="pre">-c</span> <span class="pre">/etc/ckan/production.ini</span> <span class="pre">sysadmin</span> <span class="pre">add</span> <span class="pre">ckanadmin</span></code>.</p>
+</section>
+<section id="datastore">
+<h3>Datastore<a class="headerlink" href="#datastore" title="Link a questa intestazione">#</a></h3>
+<p>Per avere la possibilità di caricare file come risorse è necessario attivare il <a class="reference external" href="https://docs.ckan.org/en/2.9/maintaining/installing/install-from-docker-compose.html#datastore-and-datapusher">Datastore</a>. Questo richiede una inizializzazione aggiuntiva del database e l’attivazione nel file di configurazione <code class="docutils literal notranslate"><span class="pre">production.ini</span></code>.</p>
+<p>Inizializzazione: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span> <span class="pre">ckan</span> <span class="pre">/usr/local/bin/ckan</span> <span class="pre">-c</span> <span class="pre">/etc/ckan/production.ini</span> <span class="pre">datastore</span> <span class="pre">set-permissions</span> <span class="pre">|</span> <span class="pre">docker-compose</span> <span class="pre">exec</span> <span class="pre">-T</span> <span class="pre">db</span> <span class="pre">psql</span> <span class="pre">-U</span> <span class="pre">ckan</span></code>.</p>
+<p>Per l’attivazione è necessario montare nel container <code class="docutils literal notranslate"><span class="pre">ckan</span></code> una versione modificabile del file <code class="docutils literal notranslate"><span class="pre">production.ini</span></code> (in <code class="docutils literal notranslate"><span class="pre">lab/services/ckan/</span></code>) e riavviare il servizio: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.custom.yml</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">ckan</span></code>.</p>
 </section>
 </section>
 <section id="backup">
@@ -618,10 +665,6 @@ title="Print to PDF"
 </section>
 <section id="localizzazione">
 <h2>Localizzazione<a class="headerlink" href="#localizzazione" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
-</section>
-<section id="laboratorio">
-<h2>Laboratorio<a class="headerlink" href="#laboratorio" title="Link a questa intestazione">#</a></h2>
 <p>…</p>
 </section>
 </section>
