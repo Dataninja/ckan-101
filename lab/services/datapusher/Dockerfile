@@ -1,4 +1,6 @@
-FROM python:3.9-alpine
+FROM python:3.9-slim
+#FROM python:3.9-alpine
+
 
 RUN apk add --update --no-cache \
         tini \
