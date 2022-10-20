@@ -34,8 +34,8 @@ with Diagram(
       ckan_core = Custom("", "icons/ckan.png")
       ckan_datapusher = Custom("Datapusher", "icons/datapusher.png")
 
-      ckan_config_volume = Custom("ckan_config", "icons/volume.png")
-      ckan_home_volume = Custom("ckan_home", "icons/volume.png")
+      # ckan_config_volume = Custom("ckan_config", "icons/volume.png")
+      # ckan_home_volume = Custom("ckan_home", "icons/volume.png")
       ckan_storage_volume = Custom("ckan_storage", "icons/volume.png")
 
     ckan_core >> Edge(color = "#336791") << main_database
@@ -45,6 +45,6 @@ with Diagram(
 
     main_database - Edge(style="dashed") - main_database_volume
     search_engine - Edge(style="dashed") - search_engine_volume
-    ckan_core - Edge(style="dashed") - ckan_config_volume
-    ckan_core - Edge(style="dashed") - ckan_home_volume
+    # ckan_core - Edge(style="dashed") - ckan_config_volume
+    # ckan_core - Edge(style="dashed") - ckan_home_volume
     ckan_core - Edge(style="dashed") - ckan_storage_volume
