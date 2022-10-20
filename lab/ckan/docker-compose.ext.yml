@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+
+  ckan:
+    build:
+      dockerfile: Dockerfile.ext
+
+  # solr:
+  #   volumes:
+  #     - ./solr/schema.xml:/opt/solr/server/solr/configsets/ckan/conf/managed-schema

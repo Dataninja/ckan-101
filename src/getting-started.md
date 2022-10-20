@@ -2,61 +2,49 @@
 
 Il codice sorgente di CKAN è pubblicato su Github: https://github.com/ckan/ckan.
 
-All'interno del [repository di questo corso](https://github.com/Dataninja/ckan-101) è presente nella cartella `lab/modules/ckan` sotto forma di [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+La [guida ufficiale](https://docs.ckan.org/en/2.9/maintaining/installing/install-from-docker-compose.html) per l'installazione e l'esecuzione di CKAN in ambiente Docker utilizza configurazioni datate di [docker-compose.yml](https://github.com/ckan/ckan/blob/ckan-2.9.6/contrib/docker/docker-compose.yml) e `Dockerfile` (ambiente Python2 invece di Python3, Solr v6 invece di v8, immagine di [datapusher](https://hub.docker.com/r/clementmouchet/datapusher) su Docker Hub molto vecchia rispetto alle [ultime versioni dei sorgenti](https://github.com/ckan/datapusher) su Github).
 
-Se hai clonato il repository con `git clone https://github.com/Dataninja/ckan-101.git` puoi *popolare* la cartella `lab/modules/ckan` con la [versione ckan-2.9.6](https://github.com/ckan/ckan/tree/ckan-2.9.6) con i comandi `git submodule init` e `git submodule update`.
-
-> ATTENZIONE: la [guida completa](https://docs.ckan.org/en/2.9/maintaining/installing/install-from-docker-compose.html) per l'installazione e l'esecuzione di CKAN in ambiente Docker utilizza configurazioni datate di `docker-compose.yml` e `Dockerfile` (ambiente Python2 invece di Python3, Solr v6 invece di v8, una vecchia immagine di Datapusher).
-
-Le configurazioni presentate in questo corso partono da quelle ufficiali, ma aggiornano tutte le dipendenze alle ultime versioni disponibili / compatibili.
+Le configurazioni presentate in questo corso partono da quelle della Open Knowledge Foundation: [okfn/docker-ckan](https://github.com/okfn/docker-ckan) (vedi anche [tech.datopian.com/ckan](https://tech.datopian.com/ckan/)) con alcune modifiche.
 
 ## Servizi e container
 
-Il [docker-compose.yml](https://github.com/ckan/ckan/blob/ckan-2.9.6/contrib/docker/docker-compose.yml) ufficiale (in `lab/modules/ckan/contrib/docker/`) è replicato e modificato in `lab/docker-compose.yml`.
+I servizi sono CKAN, Postgis, Solr, Redis e Datapusher. Le estensioni attivate di default sono il [Datastore](https://docs.ckan.org/en/2.9/maintaining/datastore.html) e [Datapusher](https://docs.ckan.org/en/2.9/maintaining/datastore.html#datapusher-automatically-add-data-to-the-datastore).
 
-### Database (PostGIS)
+### Postgis
 
-Servizio `db` nel `docker-compose.yml`. Fa uso del [Dockerfile ufficiale](https://github.com/ckan/ckan/blob/ckan-2.9.6/contrib/docker/postgresql/Dockerfile) (in `lab/modules/ckan/contrib/docker/postgresql`) e l'immagine si basa su [postgis:11](https://hub.docker.com/r/mdillon/postgis/).
+Servizio `db` nel `docker-compose.yml`, l'immagine si basa su [postgis:11](https://hub.docker.com/r/mdillon/postgis/).
 
 ### CKAN
 
-Servizio `ckan` nel `docker-compose.yml`. Fa uso del [Dockerfile ufficiale](https://github.com/ckan/ckan/blob/ckan-2.9.6/Dockerfile.py3) (in `lab/modules/ckan/Dockerfile.py3`) e l'immagine si basa su [ubuntu:focal](https://hub.docker.com/_/ubuntu).
+Servizio `ckan` nel `docker-compose.yml`, l'immagine si basa su [openknowledge/ckan-base:2.9](https://hub.docker.com/r/openknowledge/ckan-base).
 
 ### Redis
 
-Servizio `redis` nel `docker-compose.yml`, basato sull'[immagie ufficiale](https://hub.docker.com/_/redis).
+Servizio `redis` nel `docker-compose.yml`, basato sull'[immagine ufficiale](https://hub.docker.com/_/redis).
 
 ### Solr
 
-Servizio `solr` nel `docker-compose.yml`. Fa uso di un Dockerfile personalizzato (in `lab/services/solr/`) basato sull'immagine ufficiale [ckan/ckan-solr:2.9-solr8](https://hub.docker.com/r/ckan/ckan-solr).
+Servizio `solr` nel `docker-compose.yml`, l'immagine si basa su [ckan/ckan-solr:2.9-solr8](https://hub.docker.com/r/ckan/ckan-solr).
 
 ### Datapusher
 
-...
+Servizio `datapusher` nel `docker-compose.yml`, basato su un'immagine personalizzata in `lab/ckan/datapusher` riferita alla versione [0.0.18](https://github.com/ckan/datapusher/tree/0.0.18) dei sorgenti.
 
 ## Orchestrazione dei container
 
-A partire dai file di configurazione di Docker Compose della cartella `lab/` è possibile costruire le immagini di tutti i servizi con `docker-compose build` ed eseguirne i relativi container con `docker-compose up`.
+A partire dai file di configurazione di Docker Compose della cartella `lab/ckan/` è possibile costruire le immagini di tutti i servizi con `docker-compose build` ed eseguirne i relativi container con `docker-compose up`.
 
-Prima però è necessario configurare le variabili d'ambiente globali (file `.env`), i volumi per la persistenza dei dati e la personalizzazione delle configurazioni e le porte esposte dei vari servizi.
+Prima però è necessario configurare le variabili d'ambiente globali (file `.env`) ed eventualmente i volumi per la persistenza dei dati.
 
 ### Variabili d'ambiente
 
-Il [file ufficiale](https://github.com/ckan/ckan/blob/ckan-2.9.6/contrib/docker/.env.template) di configurazione (in `lab/modules/ckan/contrib/docker/.env.template`) è replicato e compilato in `lab/.env` e caricato da Docker Compose durante la fase di build delle immagini e all'esecuzione dei container.
+Il [file ufficiale](https://github.com/okfn/docker-ckan/blob/master/.env.example) di configurazione (in `lab/ckan/.env.example`) è replicato e modificato in `lab/ckan/.env` e caricato da Docker Compose durante la fase di build delle immagini e all'esecuzione dei container.
+
+> ATTENZIONE: normalmente il file `.env` contiene informazioni riservate, per cui non è incluso nel repository pubblico (compare nel file `gitignore`). Bisogna duplicare il file `.env.example` e modificarlo opportunamente.
 
 ### Volumi
 
 Sezione `volumes` nel `docker-compose.yml`. Per impostazione predefinita i volumi sono definiti come [docker named volumes](https://docs.docker.com/storage/volumes/), ma volendo possono essere montati su cartelle locali dell'host.
-
-#### CKAN Config
-
-Volume con la configurazione principale di CKAN, in particolare contiene il file `production.ini` (cartella interna al container: `/etc/ckan`).
-
-In caso di personalizzazione della configurazione (es. attivazione di estensioni o opzioni avanzate nel file `production.ini`) è utile montare un file modificabile usando anche la configurazione in `docker-compose.custom.yml` con `docker-compose -f docker-compose.yml -f docker-compose.custom.yml up -d ckan`.
-
-#### CKAN Home
-
-Volume con il codice sorgente e le eventuali estensioni aggiuntive (cartella interna al container: `/usr/lib/ckan`).
 
 #### CKAN Storage
 
@@ -68,34 +56,34 @@ Volume per la persistenza dei dati del database principale (cartella interna al 
 
 #### Solr data
 
-Volume per la persistenza dei dati del motore di ricerca (cartella interna al container: `/opt/solr/server/solr/ckan/data`).
+Volume per la persistenza dei dati del motore di ricerca (cartella interna al container: `/opt/solr/server/solr/ckan/data/index`).
 
-In caso di personalizzazione della configurazione (es. opzioni avanzate nel file `schema.xml`) è utile montare un file modificabile usando anche la configurazione in `docker-compose.dev.yml` con `docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d solr`.
+## Avvio
 
-## Configurazione iniziale
+Gli script della configurazione iniziale si occupano di inizializzare la nuova installazione in base alle configurazioni contenute nel file `.env` (es. le credenziali dell'utente di amministrazione).
 
-### Utente di amministrazione
+Per configurazioni avanzate è necessario modificare il file `ckan/Dockerfile` aggiungendo i comandi `RUN ckan config-tool $CKAN_INI "[configurazione personalizzata]"` (vedi esempio in `lab/ckan/ckan/Dockerfile`, riga 21).
 
-L'installazione iniziale richiede la creazione diretta di un utente di amministrazione che poi potrà effettura il primo login e configurare il sito dall'interfaccia web.
+Build delle immagini: `docker-compose build` in `lab/ckan/`.
 
-Eseguire `docker-compose exec -T ckan /usr/local/bin/ckan -c /etc/ckan/production.ini sysadmin add ckanadmin`.
+Esecuzione della versione base: `docker-compose up -d`.
 
-### Datastore
+Accesso ai log: `docker-compose logs -f`.
 
-Per avere la possibilità di caricare file come risorse è necessario attivare il [Datastore](https://docs.ckan.org/en/2.9/maintaining/installing/install-from-docker-compose.html#datastore-and-datapusher). Questo richiede una inizializzazione aggiuntiva del database e l'attivazione nel file di configurazione `production.ini`.
-
-Inizializzazione: `docker-compose exec ckan /usr/local/bin/ckan -c /etc/ckan/production.ini datastore set-permissions | docker-compose exec -T db psql -U ckan`.
-
-Per l'attivazione è necessario montare nel container `ckan` una versione modificabile del file `production.ini` (in `lab/services/ckan/`) e riavviare il servizio: `docker-compose -f docker-compose.yml -f docker-compose.custom.yml up -d ckan`.
+Il sito è visibile all'indirizzo [localhost:5000](http://localhost:5000).
 
 ## Backup
 
-...
+È sufficiente sottoporre a backup i tre volumi persistenti, in particolare `pg_data` e `ckan_storage`.
 
 ## Aggiornamento
 
-...
+È sempre consigliato indicare esplicitamente le versioni delle immagini docker o le tag dei repository da cui si dipende, per controllare eventuali aggiornamenti.
+
+Leggere sempre i CHANGELOG prima di effettuare un aggiornamento (es. per [ckan 2.9](https://docs.ckan.org/en/2.9/changelog.html)), seguendo la [documentazione ufficiale](https://docs.ckan.org/en/2.9/maintaining/upgrading/index.html) in merito.
 
 ## Localizzazione
 
-...
+CKAN è già distribuito con [decine di lingue](https://docs.ckan.org/en/2.9/contributing/i18n.html) e per impostazione predefinita l'utente può scegliere quella che preferisce da un menù a tendina (l'inglese è la lingua predefinita).
+
+> La versione qui presentata ha impostata la lingua italiana come lingua di default, vedi `/lab/ckan/ckan/Dockerfile` (riga 21).
