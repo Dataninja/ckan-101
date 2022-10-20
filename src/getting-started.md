@@ -62,7 +62,7 @@ Volume per la persistenza dei dati del motore di ricerca (cartella interna al co
 
 Gli script della configurazione iniziale si occupano di inizializzare la nuova installazione in base alle configurazioni contenute nel file `.env` (es. le credenziali dell'utente di amministrazione).
 
-Per configurazioni avanzate è necessario modificare il file `ckan/Dockerfile` aggiungendo i comandi `RUN ckan config-tool $CKAN_INI "[configurazione personalizzata]"` (vedi esempio in `lab/ckan/ckan/Dockerfile`, riga 21).
+Per configurazioni avanzate le opzioni sono gestite dall'estensione [okfn/ckanext-envvars](https://github.com/okfn/ckanext-envvars), attivata di default (es. `CKAN__LOCALE_DEFAULT=it`).
 
 Build delle immagini: `docker-compose build` in `lab/ckan/`.
 
@@ -86,4 +86,4 @@ Leggere sempre i CHANGELOG prima di effettuare un aggiornamento (es. per [ckan 2
 
 CKAN è già distribuito con [decine di lingue](https://docs.ckan.org/en/2.9/contributing/i18n.html) e per impostazione predefinita l'utente può scegliere quella che preferisce da un menù a tendina (l'inglese è la lingua predefinita).
 
-> La versione qui presentata ha impostata la lingua italiana come lingua di default, vedi `/lab/ckan/ckan/Dockerfile` (riga 21).
+> La versione qui presentata ha impostata la lingua italiana come lingua di default (vedi file `.env`).
