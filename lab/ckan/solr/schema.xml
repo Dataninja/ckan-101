@@ -174,6 +174,9 @@ attribute with the form `ckan-X.Y` -->
     <dynamicField name="vocab_*" type="string" indexed="true" stored="true" multiValued="true"/>
     <dynamicField name="*" type="string" indexed="true"  stored="false"/>
 
+    <!-- ckanext-multilang -->
+    <dynamicField name="package_multilang_localized_*" type="text" indexed="true" stored="true" multiValued="false"/>
+
     <!-- ckanext-dcatapit -->
     <field name="dcat_theme" type="string" indexed="true" stored="false" multiValued="true"/>
     <field name="dcat_subtheme" type="string" indexed="true" stored="false" multiValued="true"/>
@@ -208,5 +211,6 @@ attribute with the form `ckan-X.Y` -->
 <copyField source="res_description" dest="text"/>
 <copyField source="maintainer" dest="text"/>
 <copyField source="author" dest="text"/>
+<copyField source="package_multilang_localized_*" dest="text"/>
 
 </schema>

@@ -1,7 +1,5 @@
 FROM alpine:3.14
 
-MAINTAINER Open Knowledge Foundation
-
 ENV APP_DIR=/srv/app
 ENV GIT_BRANCH 0.0.18
 ENV GIT_URL https://github.com/ckan/datapusher.git

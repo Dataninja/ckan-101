@@ -1,7 +1,5 @@
 FROM openknowledge/ckan-base:2.9
 
-MAINTAINER Your Name Here <you@example.com>
-
 # Set timezone
 ARG TZ
 RUN echo $TZ > /etc/timezone
