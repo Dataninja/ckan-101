@@ -45,6 +45,9 @@ RUN apk del .build-deps && \
     sed -i '/http/d' ${APP_DIR}/datapusher-uwsgi.ini && \
     sed -i '/wsgi-file/d' ${APP_DIR}/datapusher-uwsgi.ini && \
     sed -i '/virtualenv/d' ${APP_DIR}/datapusher-uwsgi.ini && \
+    sed -i 's/#workers/workers/' ${APP_DIR}/datapusher-uwsgi.ini && \
+    sed -i 's/#threads/threads/' ${APP_DIR}/datapusher-uwsgi.ini && \
+    sed -i 's/#lazy-apps/lazy-apps/' ${APP_DIR}/datapusher-uwsgi.ini && \
     rm -rf ${APP_DIR}/src
 
 # Create a local user and group to run the app
@@ -53,4 +56,4 @@ RUN adduser -u 92 -h /srv/app -H -D -S -G www-data www-data
 EXPOSE 8800
 
 CMD ["sh", "-c", \
-    "uwsgi --plugins=http,python --http=0.0.0.0:8800 --socket=/tmp/uwsgi.sock --ini=`echo ${APP_DIR}`/datapusher-uwsgi.ini --wsgi-file=`echo ${APP_DIR}`/datapusher.wsgi", "--enable-threads"]
+    "uwsgi --plugins=http,python --http=0.0.0.0:8800 --socket=/tmp/uwsgi.sock --ini=`echo ${APP_DIR}`/datapusher-uwsgi.ini --wsgi-file=`echo ${APP_DIR}`/datapusher.wsgi"]
