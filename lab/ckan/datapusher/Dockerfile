@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM alpine:3.15
 
 ENV APP_DIR=/srv/app
 ENV GIT_BRANCH 0.0.18
