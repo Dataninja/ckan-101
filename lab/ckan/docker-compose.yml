@@ -11,6 +11,9 @@ services:
         - TZ=${TZ}
     env_file:
       - .env
+    environment:
+      - CKAN__PLUGINS=envvars image_view text_view recline_view datastore datapusher
+      - CKAN__VIEWS__DEFAULT_VIEWS=image_view text_view recline_view
     links:
       - db
       - solr
