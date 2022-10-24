@@ -81,6 +81,10 @@ Accesso ai log: `docker-compose logs -f`.
 
 Il sito è visibile all'indirizzo [localhost:5000](http://localhost:5000).
 
+> ATTENZIONE: nei log del db potrebbe apparire l'errore `ERROR: relation "migrate_version" does not exist at character 21` che si può ignorare perché giudicato benigno (vedi [issue#6449](https://github.com/ckan/ckan/issues/6449)).
+
+> ATTENZIONE: nei log del db potrebbe apparire l'errore `ERROR: relation "user" does not exist at character 515` che si può ignorare perché giudicato benigno (vedi [issue#6449](https://github.com/ckan/ckan/issues/6449)).
+
 ## Gestione delle utenze
 
 Per impostazione predefinita CKAN permette a chiunque di registrarsi, previa configurazione di un servizio di posta e l'attivazione dell'account da parte di un utente amminstratore. Si può disabilitare questa opzione configurando la variabile d'ambiente `CKAN__AUTH__CREATE_USER_VIA_WEB=False` nel file `.env`.
