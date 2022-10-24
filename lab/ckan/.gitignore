@@ -1,6 +1,5 @@
 #.env
 *.dump
-src/*
 
 .pyc
 .pyo

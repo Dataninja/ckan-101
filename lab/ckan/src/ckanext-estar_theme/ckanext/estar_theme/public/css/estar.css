@@ -1,0 +1,5 @@
+@media (min-width: 992px) {
+  .homepage.layout-1 .row1 .col2 {
+    position: static;
+  }
+}

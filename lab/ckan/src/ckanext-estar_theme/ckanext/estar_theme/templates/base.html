@@ -1,0 +1,6 @@
+{% ckan_extends %}
+
+{% block custom_styles %}
+  <link rel="stylesheet" href="{{ h.url_for_static('/css/estar.css') }}">
+  {{ super() }}
+{% endblock %}

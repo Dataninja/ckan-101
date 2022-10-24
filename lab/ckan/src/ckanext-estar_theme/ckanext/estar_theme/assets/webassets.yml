@@ -1,0 +1,14 @@
+# estar_theme-js:
+#   filter: rjsmin
+#   output: ckanext-estar_theme/%(version)s-estar_theme.js
+#   contents:
+#     - js/estar_theme.js
+#   extra:
+#     preload:
+#       - base/main
+
+# estar_theme-css:
+#   filter: cssrewrite
+#   output: ckanext-estar_theme/%(version)s-estar_theme.css
+#   contents:
+#     - css/estar_theme.css
