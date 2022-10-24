@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Indice" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Plugin" href="plugins.html" />
+    <link rel="next" title="Estensioni" href="extensions.html" />
     <link rel="prev" title="Panoramica" href="overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="it">
@@ -132,8 +132,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="plugins.html">
-   Plugin
+  <a class="reference internal" href="extensions.html">
+   Estensioni
   </a>
  </li>
  <li class="toctree-l1">
@@ -369,6 +369,13 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#variabili-d-ambiente">
      Variabili d’ambiente
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mail-server">
+       Mail server
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#volumi">
@@ -397,6 +404,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#avvio">
    Avvio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gestione-delle-utenze">
+   Gestione delle utenze
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -474,6 +486,13 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#variabili-d-ambiente">
      Variabili d’ambiente
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mail-server">
+       Mail server
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#volumi">
@@ -502,6 +521,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#avvio">
    Avvio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gestione-delle-utenze">
+   Gestione delle utenze
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -537,9 +561,12 @@ title="Print to PDF"
 <section id="servizi-e-container">
 <h2>Servizi e container<a class="headerlink" href="#servizi-e-container" title="Link a questa intestazione">#</a></h2>
 <p>I servizi sono CKAN, Postgis, Solr, Redis e Datapusher. Le estensioni attivate di default sono il <a class="reference external" href="https://docs.ckan.org/en/2.9/maintaining/datastore.html">Datastore</a> e <a class="reference external" href="https://docs.ckan.org/en/2.9/maintaining/datastore.html#datapusher-automatically-add-data-to-the-datastore">Datapusher</a>.</p>
+<blockquote>
+<div><p>ATTENZIONE: la preview delle risorse non funzionerà in locale (es. localhost:5000) per un limite della configurazione di Datapusher (vedi <a class="reference external" href="https://github.com/okfn/docker-ckan/issues/73">okfn/docker-ckan#73</a>).</p>
+</div></blockquote>
 <section id="postgis">
 <h3>Postgis<a class="headerlink" href="#postgis" title="Link a questa intestazione">#</a></h3>
-<p>Servizio <code class="docutils literal notranslate"><span class="pre">db</span></code> nel <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code>, l’immagine si basa su <a class="reference external" href="https://hub.docker.com/r/mdillon/postgis/">postgis:11</a>.</p>
+<p>Servizio <code class="docutils literal notranslate"><span class="pre">db</span></code> nel <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code>, l’immagine si basa su <a class="reference external" href="https://hub.docker.com/r/postgis/postgis">postgis/postgis:15-3.3-alpine</a>. Durante la build dell’immagine (<code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> in <code class="docutils literal notranslate"><span class="pre">lab/ckan/postgresql</span></code>) vengono caricati gli script di inizializzazione in <code class="docutils literal notranslate"><span class="pre">docker-entrypoint-initdb.d/</span></code>.</p>
 </section>
 <section id="ckan">
 <h3>CKAN<a class="headerlink" href="#ckan" title="Link a questa intestazione">#</a></h3>
@@ -547,7 +574,7 @@ title="Print to PDF"
 </section>
 <section id="redis">
 <h3>Redis<a class="headerlink" href="#redis" title="Link a questa intestazione">#</a></h3>
-<p>Servizio <code class="docutils literal notranslate"><span class="pre">redis</span></code> nel <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code>, basato sull”<a class="reference external" href="https://hub.docker.com/_/redis">immagine ufficiale</a>.</p>
+<p>Servizio <code class="docutils literal notranslate"><span class="pre">redis</span></code> nel <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code>, basato sull’immagine ufficiale di <a class="reference external" href="https://hub.docker.com/_/redis">redis:7-alpine</a>.</p>
 </section>
 <section id="solr">
 <h3>Solr<a class="headerlink" href="#solr" title="Link a questa intestazione">#</a></h3>
@@ -555,19 +582,27 @@ title="Print to PDF"
 </section>
 <section id="datapusher">
 <h3>Datapusher<a class="headerlink" href="#datapusher" title="Link a questa intestazione">#</a></h3>
-<p>Servizio <code class="docutils literal notranslate"><span class="pre">datapusher</span></code> nel <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code>, basato su un’immagine personalizzata in <code class="docutils literal notranslate"><span class="pre">lab/ckan/datapusher</span></code> riferita alla versione <a class="reference external" href="https://github.com/ckan/datapusher/tree/0.0.18">0.0.18</a> dei sorgenti.</p>
+<p>Servizio <code class="docutils literal notranslate"><span class="pre">datapusher</span></code> nel <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code>, basato su un’immagine personalizzata in <code class="docutils literal notranslate"><span class="pre">lab/ckan/datapusher</span></code> basata su <a class="reference external" href="https://hub.docker.com/_/alpine">alpine:3.15</a> riferita alla versione <a class="reference external" href="https://github.com/ckan/datapusher/tree/0.0.18">0.0.18</a> dei sorgenti.</p>
 </section>
 </section>
 <section id="orchestrazione-dei-container">
 <h2>Orchestrazione dei container<a class="headerlink" href="#orchestrazione-dei-container" title="Link a questa intestazione">#</a></h2>
-<p>A partire dai file di configurazione di Docker Compose della cartella <code class="docutils literal notranslate"><span class="pre">lab/ckan/</span></code> è possibile costruire le immagini di tutti i servizi con <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">build</span></code> ed eseguirne i relativi container con <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span></code>.</p>
-<p>Prima però è necessario configurare le variabili d’ambiente globali (file <code class="docutils literal notranslate"><span class="pre">.env</span></code>) ed eventualmente i volumi per la persistenza dei dati.</p>
+<p>A partire dal file di configurazione <code class="docutils literal notranslate"><span class="pre">dcker-compose.yml</span></code> della cartella <code class="docutils literal notranslate"><span class="pre">lab/ckan/</span></code> è possibile costruire le immagini di tutti i servizi con <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">build</span></code> ed eseguirne i relativi container con <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span></code>.</p>
+<p>Prima però è necessario configurare le variabili d’ambiente globali (file <code class="docutils literal notranslate"><span class="pre">.env</span></code>) e i volumi per la persistenza dei dati.</p>
+<blockquote>
+<div><p>TIP: nel caso si debbano eseguire comandi mediante la CLI di CKAN, bisogna farlo all’interno del container in esecuzione mediante <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span> <span class="pre">ckan</span> <span class="pre">[comando]</span></code>. Esempio: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span> <span class="pre">ckan</span> <span class="pre">ckan</span> <span class="pre">-c</span> <span class="pre">/srv/app/ckan.ini</span> <span class="pre">sysadmin</span> <span class="pre">add</span> <span class="pre">user_name</span></code>.</p>
+</div></blockquote>
 <section id="variabili-d-ambiente">
 <h3>Variabili d’ambiente<a class="headerlink" href="#variabili-d-ambiente" title="Link a questa intestazione">#</a></h3>
 <p>Il <a class="reference external" href="https://github.com/okfn/docker-ckan/blob/master/.env.example">file ufficiale</a> di configurazione (in <code class="docutils literal notranslate"><span class="pre">lab/ckan/.env.example</span></code>) è replicato e modificato in <code class="docutils literal notranslate"><span class="pre">lab/ckan/.env</span></code> e caricato da Docker Compose durante la fase di build delle immagini e all’esecuzione dei container.</p>
 <blockquote>
-<div><p>ATTENZIONE: normalmente il file <code class="docutils literal notranslate"><span class="pre">.env</span></code> contiene informazioni riservate, per cui non è incluso nel repository pubblico (compare nel file <code class="docutils literal notranslate"><span class="pre">gitignore</span></code>). Bisogna duplicare il file <code class="docutils literal notranslate"><span class="pre">.env.example</span></code> e modificarlo opportunamente.</p>
+<div><p>ATTENZIONE: normalmente il file <code class="docutils literal notranslate"><span class="pre">.env</span></code> contiene informazioni riservate, per cui non è incluso nel repository pubblico (compare nel file <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>). Bisogna duplicare il file <code class="docutils literal notranslate"><span class="pre">.env.example</span></code> manualmente e modificarlo opportunamente. In questo repository è incluso solo per fini didattici.</p>
 </div></blockquote>
+<p>CKAN usa l’estensione <a class="reference external" href="https://github.com/okfn/ckanext-envvars">ckanext-envvars</a> per compilare il file di configurazione <code class="docutils literal notranslate"><span class="pre">ckan.ini</span></code> a partire dalle variabili d’ambiente valorizzate nel file <code class="docutils literal notranslate"><span class="pre">.env</span></code>. In generale le opzioni del tipo <code class="docutils literal notranslate"><span class="pre">ckan.extension.option_1</span></code> sono tradotte in <code class="docutils literal notranslate"><span class="pre">CKAN__EXTENSION__OPTION_1</span></code> (<code class="docutils literal notranslate"><span class="pre">__</span></code> al posto di <code class="docutils literal notranslate"><span class="pre">.</span></code> e tutto maiuscolo). Per i dettagli si veda la <a class="reference external" href="https://github.com/okfn/ckanext-envvars">documentazione ufficiale</a>.</p>
+<section id="mail-server">
+<h4>Mail server<a class="headerlink" href="#mail-server" title="Link a questa intestazione">#</a></h4>
+<p>CKAN può inviare mail transazionali (es. per la registrazione o l’invito di nuovi utenti) solo se viene configurato opportunamente un servizio mail esterno mediante il protocollo SMTP. Si veda la sezione dedicata nel file <code class="docutils literal notranslate"><span class="pre">.env</span></code>.</p>
+</section>
 </section>
 <section id="volumi">
 <h3>Volumi<a class="headerlink" href="#volumi" title="Link a questa intestazione">#</a></h3>
@@ -589,26 +624,49 @@ title="Print to PDF"
 <section id="avvio">
 <h2>Avvio<a class="headerlink" href="#avvio" title="Link a questa intestazione">#</a></h2>
 <p>Gli script della configurazione iniziale si occupano di inizializzare la nuova installazione in base alle configurazioni contenute nel file <code class="docutils literal notranslate"><span class="pre">.env</span></code> (es. le credenziali dell’utente di amministrazione).</p>
-<p>Per configurazioni avanzate è necessario modificare il file <code class="docutils literal notranslate"><span class="pre">ckan/Dockerfile</span></code> aggiungendo i comandi <code class="docutils literal notranslate"><span class="pre">RUN</span> <span class="pre">ckan</span> <span class="pre">config-tool</span> <span class="pre">$CKAN_INI</span> <span class="pre">&quot;[configurazione</span> <span class="pre">personalizzata]&quot;</span></code> (vedi esempio in <code class="docutils literal notranslate"><span class="pre">lab/ckan/ckan/Dockerfile</span></code>, riga 21).</p>
+<p>Per configurazioni avanzate le opzioni sono gestite dall’estensione <a class="reference external" href="https://github.com/okfn/ckanext-envvars">okfn/ckanext-envvars</a>, attivata di default (es. <code class="docutils literal notranslate"><span class="pre">CKAN__LOCALE_DEFAULT=it</span></code>).</p>
 <p>Build delle immagini: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">build</span></code> in <code class="docutils literal notranslate"><span class="pre">lab/ckan/</span></code>.</p>
 <p>Esecuzione della versione base: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">-d</span></code>.</p>
 <p>Accesso ai log: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">logs</span> <span class="pre">-f</span></code>.</p>
 <p>Il sito è visibile all’indirizzo <a class="reference external" href="http://localhost:5000">localhost:5000</a>.</p>
+<blockquote>
+<div><p>ATTENZIONE: nei log del db potrebbe apparire l’errore <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">relation</span> <span class="pre">&quot;migrate_version&quot;</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">exist</span> <span class="pre">at</span> <span class="pre">character</span> <span class="pre">21</span></code> che si può ignorare perché giudicato benigno (vedi <a class="reference external" href="https://github.com/ckan/ckan/issues/6449">issue#6449</a>).</p>
+</div></blockquote>
+<blockquote>
+<div><p>ATTENZIONE: nei log del db potrebbe apparire l’errore <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">relation</span> <span class="pre">&quot;user&quot;</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">exist</span> <span class="pre">at</span> <span class="pre">character</span> <span class="pre">515</span></code> che si può ignorare perché giudicato benigno (vedi <a class="reference external" href="https://github.com/ckan/ckan/issues/6449">issue#6449</a>).</p>
+</div></blockquote>
+</section>
+<section id="gestione-delle-utenze">
+<h2>Gestione delle utenze<a class="headerlink" href="#gestione-delle-utenze" title="Link a questa intestazione">#</a></h2>
+<p>Per impostazione predefinita CKAN permette a chiunque di registrarsi, previa configurazione di un servizio di posta e l’attivazione dell’account da parte di un utente amminstratore. Si può disabilitare questa opzione configurando la variabile d’ambiente <code class="docutils literal notranslate"><span class="pre">CKAN__AUTH__CREATE_USER_VIA_WEB=False</span></code> nel file <code class="docutils literal notranslate"><span class="pre">.env</span></code>.</p>
+<p>L’utente amministratore può invitare un utente a registrarsi a partire dalla sua mail, purché il servizio di posta sia correttamente configurato.</p>
+<p>L’utente amministratore può creare direttamente nuovi utenti (amministratori o no) mediante linea di comando:</p>
+<ul class="simple">
+<li><p>nuovo amministratore: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span> <span class="pre">ckan</span> <span class="pre">ckan</span> <span class="pre">-c</span> <span class="pre">/srv/app/ckan.ini</span> <span class="pre">sysadmin</span> <span class="pre">add</span> <span class="pre">ckan_admin_2</span> <span class="pre">email=ckan_admin_2&#64;localhost</span> <span class="pre">name=ckan_admin_2</span></code></p></li>
+<li><p>nuovo utente semplice: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span> <span class="pre">ckan</span> <span class="pre">ckan</span> <span class="pre">-c</span> <span class="pre">/srv/app/ckan.ini</span> <span class="pre">user</span> <span class="pre">add</span> <span class="pre">ckan_1</span> <span class="pre">email=ckan_1&#64;localhost</span> <span class="pre">name=ckan_1</span></code></p></li>
+</ul>
+<p>Per ulteriori dettagli si veda la <a class="reference external" href="https://docs.ckan.org/en/2.9/sysadmin-guide.html#creating-a-sysadmin-account">documentazione ufficiale</a>.</p>
 </section>
 <section id="backup">
 <h2>Backup<a class="headerlink" href="#backup" title="Link a questa intestazione">#</a></h2>
 <p>È sufficiente sottoporre a backup i tre volumi persistenti, in particolare <code class="docutils literal notranslate"><span class="pre">pg_data</span></code> e <code class="docutils literal notranslate"><span class="pre">ckan_storage</span></code>.</p>
+<p>Nel caso del database è possibile utilizzare gli strumenti nativi di PostgreSQL come <code class="docutils literal notranslate"><span class="pre">pg_dump</span></code> e <code class="docutils literal notranslate"><span class="pre">pg-restore</span></code> (vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/maintaining/database-management.html#import-and-export">documentazione ufficiale</a>):</p>
+<ul class="simple">
+<li><p>dump: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span> <span class="pre">db</span> <span class="pre">pg_dump</span> <span class="pre">-Fc</span> <span class="pre">-U</span> <span class="pre">ckan</span> <span class="pre">-d</span> <span class="pre">ckan</span> <span class="pre">&gt;</span> <span class="pre">ckan.dump</span></code></p></li>
+<li><p>restore: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">exec</span> <span class="pre">db</span> <span class="pre">pg_restore</span> <span class="pre">--clean</span> <span class="pre">--if-exists</span> <span class="pre">-U</span> <span class="pre">ckan</span> <span class="pre">-d</span> <span class="pre">ckan</span> <span class="pre">&lt;</span> <span class="pre">ckan.dump</span></code></p></li>
+</ul>
 </section>
 <section id="aggiornamento">
 <h2>Aggiornamento<a class="headerlink" href="#aggiornamento" title="Link a questa intestazione">#</a></h2>
 <p>È sempre consigliato indicare esplicitamente le versioni delle immagini docker o le tag dei repository da cui si dipende, per controllare eventuali aggiornamenti.</p>
 <p>Leggere sempre i CHANGELOG prima di effettuare un aggiornamento (es. per <a class="reference external" href="https://docs.ckan.org/en/2.9/changelog.html">ckan 2.9</a>), seguendo la <a class="reference external" href="https://docs.ckan.org/en/2.9/maintaining/upgrading/index.html">documentazione ufficiale</a> in merito.</p>
+<p>A questo punto è sufficiente modificare le versioni indicate nei file rilevanti (es. <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> e/o <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>) e rifare la build delle immagini (es. <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">--build</span> <span class="pre">-d</span></code>).</p>
 </section>
 <section id="localizzazione">
 <h2>Localizzazione<a class="headerlink" href="#localizzazione" title="Link a questa intestazione">#</a></h2>
 <p>CKAN è già distribuito con <a class="reference external" href="https://docs.ckan.org/en/2.9/contributing/i18n.html">decine di lingue</a> e per impostazione predefinita l’utente può scegliere quella che preferisce da un menù a tendina (l’inglese è la lingua predefinita).</p>
 <blockquote>
-<div><p>La versione qui presentata ha impostata la lingua italiana come lingua di default, vedi <code class="docutils literal notranslate"><span class="pre">/lab/ckan/ckan/Dockerfile</span></code> (riga 21).</p>
+<div><p>ATTENZIONE: la versione qui presentata ha impostata la lingua italiana come lingua di default (vedi variabile <code class="docutils literal notranslate"><span class="pre">CKAN__LOCALE_DEFAULT=it</span></code> file <code class="docutils literal notranslate"><span class="pre">.env</span></code>).</p>
 </div></blockquote>
 </section>
 </section>
@@ -647,10 +705,10 @@ title="Print to PDF"
             <p class="prev-next-title">Panoramica</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="plugins.html" title="successivo pagina">
+    <a class='right-next' id="next-link" href="extensions.html" title="successivo pagina">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title">Plugin</p>
+        <p class="prev-next-title">Estensioni</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

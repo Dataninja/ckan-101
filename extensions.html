@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Temi &#8212; CKAN 101</title>
+    <title>Estensioni &#8212; CKAN 101</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Indice" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Gestione dati" href="data-management.html" />
-    <link rel="prev" title="Estensioni" href="extensions.html" />
+    <link rel="next" title="Temi" href="themes.html" />
+    <link rel="prev" title="Primi passi" href="getting-started.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="it">
     
@@ -131,13 +131,13 @@ const thebe_selector_output = ".output, .cell_output"
    Primi passi
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="extensions.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Estensioni
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="themes.html">
    Temi
   </a>
  </li>
@@ -241,7 +241,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/Dataninja/ckan-101/issues/new?title=Issue%20on%20page%20%2Fthemes.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Dataninja/ckan-101/issues/new?title=Issue%20on%20page%20%2Fextensions.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -269,7 +269,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/themes.md"
+        <a href="_sources/extensions.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -329,46 +329,26 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tema-built-in">
-   Tema built-in
+  <a class="reference internal nav-link" href="#estensioni-built-in">
+   Estensioni built-in
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#temi-di-terze-parti">
-   Temi di terze parti
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sviluppo-di-un-tema">
-   Sviluppo di un tema
+  <a class="reference internal nav-link" href="#estensioni-ufficiali-e-di-terze-parti">
+   Estensioni ufficiali e di terze parti
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#template-di-pagina-personalizzati">
-     Template di pagina personalizzati
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#css-personalizzato">
-     CSS personalizzato
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#immagini-personalizzate">
-     Immagini personalizzate
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#traduzioni-personalizzate">
-     Traduzioni personalizzate
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#javascript-personalizzato">
-     Javascript personalizzato
+    <a class="reference internal nav-link" href="#rimozione">
+     Rimozione
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sviluppo-di-un-estensione">
+   Sviluppo di un’estensione
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#laboratorio">
@@ -384,7 +364,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Temi</h1>
+                <h1>Estensioni</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -395,46 +375,26 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tema-built-in">
-   Tema built-in
+  <a class="reference internal nav-link" href="#estensioni-built-in">
+   Estensioni built-in
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#temi-di-terze-parti">
-   Temi di terze parti
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sviluppo-di-un-tema">
-   Sviluppo di un tema
+  <a class="reference internal nav-link" href="#estensioni-ufficiali-e-di-terze-parti">
+   Estensioni ufficiali e di terze parti
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#template-di-pagina-personalizzati">
-     Template di pagina personalizzati
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#css-personalizzato">
-     CSS personalizzato
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#immagini-personalizzate">
-     Immagini personalizzate
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#traduzioni-personalizzate">
-     Traduzioni personalizzate
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#javascript-personalizzato">
-     Javascript personalizzato
+    <a class="reference internal nav-link" href="#rimozione">
+     Rimozione
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sviluppo-di-un-estensione">
+   Sviluppo di un’estensione
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#laboratorio">
@@ -451,60 +411,78 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="temi">
-<h1>Temi<a class="headerlink" href="#temi" title="Link a questa intestazione">#</a></h1>
-<p>Per personalizzare l’interfaccia grafica di CKAN è necessario sviluppare un’estensione che modifichi i template forniti dall’installazione ufficiale basati su <a class="reference external" href="https://jinja.palletsprojects.com/en/3.1.x/">Jinja</a>.</p>
-<section id="tema-built-in">
-<h2>Tema built-in<a class="headerlink" href="#tema-built-in" title="Link a questa intestazione">#</a></h2>
-<p>L’unica personalizzazione possibile del tema predefinito di CKAN è la palette di colori, modificabile come utente amministratore nella pagina di configurazione (<code class="docutils literal notranslate"><span class="pre">/ckan-admin/config</span></code>) sotto la voce «Stile».</p>
-<p>Colori disponibili:</p>
-<ul class="simple">
-<li><p>blu (default),</p></li>
-<li><p>rosso chiaro,</p></li>
-<li><p>verde,</p></li>
-<li><p>rosso scuro,</p></li>
-<li><p>fucsia.</p></li>
-</ul>
-<p>Nella stessa pagina è inoltre possibile personalizzare gli elementi in homepage selezionando una delle opzioni sotto la voce «Homepage»:</p>
-<ul class="simple">
-<li><p>Introductory area, search, featured group and featured organization</p></li>
-<li><p>Search, stats, introductory area, featured organization and featured group</p></li>
-<li><p>Search, introductory area and stats</p></li>
-</ul>
-<p>Per piccole modifiche allo stile delle pagine è possibile salvare un codice CSS personalizzato nella pagina di configurazione (<code class="docutils literal notranslate"><span class="pre">/ckan-admin/config</span></code>) sotto la voce «CSS personalizzato». Si tratta di regole CSS globali, caricate in tutte le pagine, per cui è importante definire selettori abbastanza specifici su classi e id.</p>
-<p>Esempio per nascondere l’immagine in homepage nella card di benvenuto: <code class="docutils literal notranslate"><span class="pre">.homepage</span> <span class="pre">.featured</span> <span class="pre">.media-image</span> <span class="pre">{</span> <span class="pre">display:</span> <span class="pre">none;</span> <span class="pre">}</span></code>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="estensioni">
+<h1>Estensioni<a class="headerlink" href="#estensioni" title="Link a questa intestazione">#</a></h1>
+<p>Le funzionalità di CKAN possono essere ampliate mediante estensioni (dette <code class="docutils literal notranslate"><span class="pre">ckanext</span></code>), alcune delle quali sono ufficiali, perché mantenute dal core team di CKAN (es. <a class="reference external" href="https://github.com/orgs/ckan/repositories?q=ckanext-&amp;type=all&amp;language=&amp;sort=">ckan/repositories?q=ckanext-</a>), altre di terze parti (vedi <a class="reference external" href="https://extensions.ckan.org/">extensions.ckan.org</a>).</p>
+<blockquote>
+<div><p>ATTENZIONE: la versione 2.9 di CKAN presentata in questo repository viene eseguita in ambiente Python3, per cui eventuali vecchie estensioni che supportano solo Python2 non sono compatibili.</p>
+</div></blockquote>
+<p>In questo repository l’installazione, l’inizializzazione, la configurazione delle estensioni viene effettuata nel file <code class="docutils literal notranslate"><span class="pre">/lab/ckan/ckan/Dockerfile.ext</span></code> (usato dal file <code class="docutils literal notranslate"><span class="pre">docker-compose.ext.yml</span></code>) e la loro attivazione del file <code class="docutils literal notranslate"><span class="pre">.env</span></code>.</p>
+<section id="estensioni-built-in">
+<h2>Estensioni built-in<a class="headerlink" href="#estensioni-built-in" title="Link a questa intestazione">#</a></h2>
+<p>Alcune estensioni sono già presenti nel core di CKAN (si veda la cartella <code class="docutils literal notranslate"><span class="pre">ckanext</span></code> del <a class="reference external" href="https://github.com/ckan/ckan/tree/master/ckanext">repository ufficiale</a>), quindi vanno semplicemente attivati i plugin che forniscono nel file <code class="docutils literal notranslate"><span class="pre">.env</span></code> aggiungendoli in coda alla variabile <code class="docutils literal notranslate"><span class="pre">CKAN__PLUGINS</span></code> e poi riavviando il container con <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">ckan</span></code>.</p>
+<p>Alcune estensioni mettono a disposizione anche delle <em>viste</em> (<code class="docutils literal notranslate"><span class="pre">views</span></code>), delle modalità di preview delle risorse. In tal caso vanno esplicitamente attivate mediante la variabile <code class="docutils literal notranslate"><span class="pre">CKAN__VIEWS__DEFAULT_VIEWS</span></code> nel file <code class="docutils literal notranslate"><span class="pre">.env</span></code>. Si rimanda alla documentazione delle singole estensioni per i dettagli.</p>
 </section>
-<section id="temi-di-terze-parti">
-<h2>Temi di terze parti<a class="headerlink" href="#temi-di-terze-parti" title="Link a questa intestazione">#</a></h2>
-<p>Un tema di CKAN è un’estensione, quindi se rilasciata in open source si può scaricare e installare (vedi la <a class="reference internal" href="extensions.html"><span class="doc std std-doc">sezione sulle estensioni</span></a>). È molto difficile però scrivere un tema personalizzabile e abbastanza flessibile da essere riutilizzato, quindi se ne trovano molto pochi.</p>
+<section id="estensioni-ufficiali-e-di-terze-parti">
+<h2>Estensioni ufficiali e di terze parti<a class="headerlink" href="#estensioni-ufficiali-e-di-terze-parti" title="Link a questa intestazione">#</a></h2>
+<p>Le estensioni ufficiali e di terze parti sono rilasciate come pacchetti Python e vanno installate e attivate opportunamente, in generale sono necessari i seguenti passaggi:</p>
+<ol class="simple">
+<li><p>installare l’estensione mediante <code class="docutils literal notranslate"><span class="pre">pip</span></code>, spesso direttamente dal repository pubblico su Github (es. <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">git+https://github.com/ckan/ckanext-pages.git#egg=ckanext-pages</span></code>);</p></li>
+<li><p>[opzionale] installare eventuali pacchetti aggiuntivi richiesti (es. <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">https://raw.githubusercontent.com/ckan/ckanext-dcat/v0.0.6/requirements.txt</span></code>);</p></li>
+<li><p>[opzionale] eseguire eventuali script di inizializzazione del database;</p></li>
+<li><p>[opzionale] eseguire eventuali script di inizializzazione mediante la CLI di CKAN;</p></li>
+<li><p>attivare l’estensione e aggiungere eventuali configurazioni specifiche;</p></li>
+<li><p>riavviare CKAN.</p></li>
+</ol>
+<p>Nella versione dockerizzata di questo repository questi passaggi si traducono nella seguente procedura:</p>
+<ol class="simple">
+<li><p>aggiungere le istruzioni di installazione dell’estensione e dei requisiti al file <code class="docutils literal notranslate"><span class="pre">lab/ckan/ckan/Dockerfile.ext</span></code> (vedi esempi);</p></li>
+<li><p>[opzionale] aggiungere un eventuale script di inizializzazione del database in <code class="docutils literal notranslate"><span class="pre">lab/ckan/postgresql/docker-entrypoint-initdb.d</span></code>;</p></li>
+<li><p>[opzionale] aggiungere un eventuale script di inizializzazione in <code class="docutils literal notranslate"><span class="pre">lab/ckan/ckan/docker-entrypoint.d</span></code>;</p></li>
+<li><p>aggiungere i plugin forniti dall’estensione all’elenco della variabile d’ambiente <code class="docutils literal notranslate"><span class="pre">CKAN__PLUGINS</span></code> nel file <code class="docutils literal notranslate"><span class="pre">.env</span></code> e le eventuali configurazioni aggiuntive;</p></li>
+<li><p>rifare la build delle immagini e riavviare i container con <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.ext.yml</span> <span class="pre">up</span> <span class="pre">--build</span> <span class="pre">-d</span></code>.</p></li>
+</ol>
+<section id="rimozione">
+<h3>Rimozione<a class="headerlink" href="#rimozione" title="Link a questa intestazione">#</a></h3>
+<p>Per rimuovere un plugin precedentemente attivato è necessario ripercorrere a ritroso i passaggi per la sua installazione, dal punto 5 al punto 1.
+Infine rifare la build delle immagini e riavviare i container.</p>
+<blockquote>
+<div><p>ATTENZIONE: alcune estensioni potrebbero inizializzare il database creando tabelle aggiuntive, fare sempre riferimento alla documentazione ufficiale dell’estensione per capire se è prevista un’opportuna procedura di pulizia post-rimozione.</p>
+</div></blockquote>
+<blockquote>
+<div><p>ATTENZIONE: alcune estensioni dipendono da altre estensioni (es. dcatapit da dcat), fare sempre riferimento alle documentazioni ufficiali.</p>
+</div></blockquote>
 </section>
-<section id="sviluppo-di-un-tema">
-<h2>Sviluppo di un tema<a class="headerlink" href="#sviluppo-di-un-tema" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
-<section id="template-di-pagina-personalizzati">
-<h3>Template di pagina personalizzati<a class="headerlink" href="#template-di-pagina-personalizzati" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
 </section>
-<section id="css-personalizzato">
-<h3>CSS personalizzato<a class="headerlink" href="#css-personalizzato" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
-</section>
-<section id="immagini-personalizzate">
-<h3>Immagini personalizzate<a class="headerlink" href="#immagini-personalizzate" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
-</section>
-<section id="traduzioni-personalizzate">
-<h3>Traduzioni personalizzate<a class="headerlink" href="#traduzioni-personalizzate" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
-</section>
-<section id="javascript-personalizzato">
-<h3>Javascript personalizzato<a class="headerlink" href="#javascript-personalizzato" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
-</section>
+<section id="sviluppo-di-un-estensione">
+<h2>Sviluppo di un’estensione<a class="headerlink" href="#sviluppo-di-un-estensione" title="Link a questa intestazione">#</a></h2>
+<p>La <a class="reference external" href="https://docs.ckan.org/en/2.9/extensions/tutorial.html">documentazione ufficiale</a> mostra lo sviluppo da zero di un’estensione all’interno di un tutorial per spiegare i vari passaggi necessari per estendere le funzionalità di CKAN.</p>
+<p>Nel nostro caso, la Open Knowledge Foundation descrive una <a class="reference external" href="https://github.com/okfn/docker-ckan#development-mode">modalità di sviluppo</a> direttamente all’interno di un container ottimizzato per questo scopo.</p>
+<ol class="simple">
+<li><p>Fare la build dell’immagine di sviluppo: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-d</span> <span class="pre">docker-compose.dev.yml</span> <span class="pre">build</span> <span class="pre">ckan</span></code></p></li>
+<li><p>Eseguire i container in modalità sviluppo: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-d</span> <span class="pre">docker-compose.dev.yml</span> <span class="pre">build</span> <span class="pre">ckan</span></code></p></li>
+<li><p>Inizializzare la nuova estensione: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.dev.yml</span> <span class="pre">exec</span> <span class="pre">ckan</span> <span class="pre">ckan</span> <span class="pre">generate</span> <span class="pre">extension</span> <span class="pre">--output-dir</span> <span class="pre">/srv/app/src_extensions</span></code></p></li>
+<li><p>Rispondere a tutte le domande</p></li>
+</ol>
+<p>Nella cartella locale <code class="docutils literal notranslate"><span class="pre">/lab/ckan/src</span></code> apparirà la cartella della nuova estensione con nome <code class="docutils literal notranslate"><span class="pre">ckanext-nome_nuova_estensione</span></code>. Per modificarne i file all’interno è forse necessario modificare opportunamente i permessi della cartella.</p>
+<ol class="simple">
+<li><p>Aggiungere alla variabile d’ambiente <code class="docutils literal notranslate"><span class="pre">CKAN__PLUGINS</span></code> il nome del plugin fornito dall’estensione appena creata (es. <code class="docutils literal notranslate"><span class="pre">CKAN__PLUGINS=...</span> <span class="pre">nome_nuova_estensione</span></code>).</p></li>
+<li><p>Riavviare il container: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.dev.yml</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">ckan</span></code>.</p></li>
+</ol>
 </section>
 <section id="laboratorio">
 <h2>Laboratorio<a class="headerlink" href="#laboratorio" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
+<p>Installiamo e configuriamo un portale completo in accordo con le <a class="reference external" href="https://docs.italia.it/italia/daf/lg-patrimonio-pubblico/it/stabile/index.html">linee guida AgID</a>.</p>
+<p>Estensioni attivate:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ckan/ckanext-pages">Pages</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ckan/ckanext-harvest">Harvest</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ckan/ckanext-spatial">Spatial</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ckan/ckanext-geoview">Geoview</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ckan/ckanext-dcat">DCAT</a></p></li>
+<li><p><a class="reference external" href="https://github.com/geosolutions-it/ckanext-multilang">Multilang</a></p></li>
+<li><p><a class="reference external" href="https://github.com/geosolutions-it/ckanext-dcatapit">DCAT_AP-IT</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -535,17 +513,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="extensions.html" title="precedente pagina">
+    <a class='left-prev' id="prev-link" href="getting-started.html" title="precedente pagina">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">precedente</p>
-            <p class="prev-next-title">Estensioni</p>
+            <p class="prev-next-title">Primi passi</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="data-management.html" title="successivo pagina">
+    <a class='right-next' id="next-link" href="themes.html" title="successivo pagina">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title">Gestione dati</p>
+        <p class="prev-next-title">Temi</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
