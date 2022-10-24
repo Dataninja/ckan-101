@@ -10,6 +10,11 @@ RUN pip install --upgrade pip
 # Install any extensions needed by your CKAN instance
 # (Make sure to add the plugins to CKAN__PLUGINS in the .env file)
 
+# Pages
+# See https://github.com/ckan/ckanext-pages
+ENV CKANEXT_PAGES_VERSION=v0.3.7
+RUN pip install -e git+https://github.com/ckan/ckanext-pages.git@${CKANEXT_PAGES_VERSION}#egg=ckanext-pages
+
 # Harvest
 # See https://github.com/ckan/ckanext-harvest
 ENV CKANEXT_HARVEST_VERSION=v1.4.1

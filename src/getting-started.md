@@ -98,6 +98,11 @@ Per ulteriori dettagli si veda la [documentazione ufficiale](https://docs.ckan.o
 
 È sufficiente sottoporre a backup i tre volumi persistenti, in particolare `pg_data` e `ckan_storage`.
 
+Nel caso del database è possibile utilizzare gli strumenti nativi di PostgreSQL come `pg_dump` e `pg-restore` (vedi [documentazione ufficiale](https://docs.ckan.org/en/2.9/maintaining/database-management.html#import-and-export)):
+
+- dump: `docker-compose exec db pg_dump -Fc -U ckan -d ckan > ckan.dump`
+- restore: `docker-compose exec db pg_restore --clean --if-exists -U ckan -d ckan < ckan.dump`
+
 ## Aggiornamento
 
 È sempre consigliato indicare esplicitamente le versioni delle immagini docker o le tag dei repository da cui si dipende, per controllare eventuali aggiornamenti.
@@ -110,4 +115,4 @@ A questo punto è sufficiente modificare le versioni indicate nei file rilevanti
 
 CKAN è già distribuito con [decine di lingue](https://docs.ckan.org/en/2.9/contributing/i18n.html) e per impostazione predefinita l'utente può scegliere quella che preferisce da un menù a tendina (l'inglese è la lingua predefinita).
 
-> ATTENSIONE: la versione qui presentata ha impostata la lingua italiana come lingua di default (vedi variabile `CKAN__LOCALE_DEFAULT=it` file `.env`).
+> ATTENZIONE: la versione qui presentata ha impostata la lingua italiana come lingua di default (vedi variabile `CKAN__LOCALE_DEFAULT=it` file `.env`).

@@ -7,7 +7,7 @@ export CKANEXT_FOLDER=$CKAN_CONFIG/src/ckanext-dcatapit
 # Populate controlled vocabularies (by EU and AgID)
 # See https://github.com/geosolutions-it/ckanext-dcatapit#installation (n. 14)
 echo "Ckanext Dcatapit: VOCABULARIES"
-if [ ! -f ${CKANEXT_FOLDER}/vocabularies.downloaded ]; then
+if [ ! -f "${CKANEXT_FOLDER}/vocabularies.downloaded" ]; then
   ckan -c $CKAN_INI dcatapit load --filename=$CKANEXT_FOLDER/vocabularies/languages-filtered.rdf
   ckan -c $CKAN_INI dcatapit load --filename=$CKANEXT_FOLDER/vocabularies/data-theme-filtered.rdf
   ckan -c $CKAN_INI dcatapit load --filename=$CKANEXT_FOLDER/vocabularies/places-filtered.rdf

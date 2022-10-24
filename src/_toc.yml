@@ -7,7 +7,7 @@ chapters:
 - file: introduction
 - file: overview
 - file: getting-started
-- file: plugins
+- file: extensions
 - file: themes
 - file: data-management
 - file: acknowledgments
