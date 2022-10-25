@@ -3,6 +3,8 @@ version: "3"
 services:
 
   ckan:
+    image: ckan_ckan:dev
+    container_name: ckan-dev
     build:
       dockerfile: Dockerfile.dev
     environment:
@@ -11,3 +13,16 @@ services:
       - CKAN__FAVICON=/images/favicon.png
     volumes:
       - ./src:/srv/app/src_extensions
+
+  datapusher:
+    container_name: datapusher-dev
+
+  db:
+    image: ckan_db:dev
+    container_name: db-dev
+
+  solr:
+    container_name: solr-dev
+
+  redis:
+    container_name: redis-dev

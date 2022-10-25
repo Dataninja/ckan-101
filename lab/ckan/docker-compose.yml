@@ -3,7 +3,8 @@ version: "3"
 services:
 
   ckan:
-    container_name: ckan
+    image: ckan_ckan:base
+    container_name: ckan-base
     build:
       context: ckan/
       dockerfile: Dockerfile
@@ -14,6 +15,7 @@ services:
     environment:
       - CKAN__PLUGINS=envvars image_view text_view recline_view datastore datapusher
       - CKAN__VIEWS__DEFAULT_VIEWS=image_view text_view recline_view
+      - CKAN__FAVICON=https://www.estar.toscana.it/wp-content/uploads/2021/04/Logo-Estar_150x150.png
     links:
       - db
       - solr
@@ -25,14 +27,14 @@ services:
       - ckan_storage:/var/lib/ckan
 
   datapusher:
-    container_name: datapusher
+    image: ckan_datapusher:base
+    container_name: datapusher-base
     build:
       context: datapusher/
-    ports:
-      - "8800:8800"
 
   db:
-    container_name: db
+    image: ckan_db:base
+    container_name: db-base
     build:
       context: postgresql/
       args:
@@ -46,13 +48,13 @@ services:
       - pg_data:/var/lib/postgresql/data
 
   solr:
-    container_name: solr
     image: ckan/ckan-solr:2.9-solr8
+    container_name: solr-base
     volumes:
       - solr_data:/opt/solr/server/solr/ckan/data/index
 
   redis:
-    container_name: redis
+    container_name: redis-base
     image: redis:7-alpine
 
 volumes:

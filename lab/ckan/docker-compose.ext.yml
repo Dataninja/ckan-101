@@ -3,12 +3,25 @@ version: "3"
 services:
 
   ckan:
+    image: ckan_ckan:ext
+    container_name: ckan-ext
     build:
       dockerfile: Dockerfile.ext
     environment:
       - CKAN__PLUGINS=envvars resource_proxy image_view text_view recline_view geojson_view datastore datapusher pages harvest ckan_harvester spatial_metadata spatial_query dcat dcat_json_interface structured_data multilang multilang_harvester dcatapit_pkg dcatapit_org dcatapit_config dcatapit_theme_group_mapper dcatapit_harvest_list dcatapit_harvester dcatapit_csw_harvester dcatapit_vocabulary
       - CKAN__VIEWS__DEFAULT_VIEWS=image_view text_view recline_view geojson_view
 
+  datapusher:
+    container_name: datapusher-ext
+
+  db:
+    image: ckan_db:ext
+    container_name: db-ext
+
   solr:
+    container_name: solr-ext
     volumes:
       - ./solr/schema.xml:/opt/solr/server/solr/configsets/ckan/conf/managed-schema
+
+  redis:
+    container_name: redis-ext
