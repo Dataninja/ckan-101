@@ -472,15 +472,20 @@ title="Print to PDF"
 <li><p>Search, introductory area and stats</p></li>
 </ul>
 <p>Per piccole modifiche allo stile delle pagine è possibile salvare un codice CSS personalizzato nella pagina di configurazione (<code class="docutils literal notranslate"><span class="pre">/ckan-admin/config</span></code>) sotto la voce «CSS personalizzato». Si tratta di regole CSS globali, caricate in tutte le pagine, per cui è importante definire selettori abbastanza specifici su classi e id.</p>
-<p>Esempio per nascondere l’immagine in homepage nella card di benvenuto: <code class="docutils literal notranslate"><span class="pre">.homepage</span> <span class="pre">.featured</span> <span class="pre">.media-image</span> <span class="pre">{</span> <span class="pre">display:</span> <span class="pre">none;</span> <span class="pre">}</span></code>.</p>
+<p>Esempio per nascondere l’immagine in homepage nella card di benvenuto: <code class="docutils literal notranslate"><span class="pre">.homepage</span> <span class="pre">.featured</span> <span class="pre">{</span> <span class="pre">display:</span> <span class="pre">none;</span> <span class="pre">}</span></code>.</p>
+<p>È anche possibile impostare una favicon personalizzata valorizzando la variabile d’ambiente <code class="docutils literal notranslate"><span class="pre">CKAN__FAVICON</span></code> con un url assoluto a una risorsa esterna (ed. <code class="docutils literal notranslate"><span class="pre">CKAN__FAVICON=https://www.estar.toscana.it/wp-content/uploads/2021/04/Logo-Estar_150x150.png</span></code>).</p>
 </section>
 <section id="temi-di-terze-parti">
 <h2>Temi di terze parti<a class="headerlink" href="#temi-di-terze-parti" title="Link a questa intestazione">#</a></h2>
-<p>Un tema di CKAN è un’estensione, quindi se rilasciata in open source si può scaricare e installare (vedi la <a class="reference internal" href="extensions.html"><span class="doc std std-doc">sezione sulle estensioni</span></a>). È molto difficile però scrivere un tema personalizzabile e abbastanza flessibile da essere riutilizzato, quindi se ne trovano molto pochi.</p>
+<p>Un tema di CKAN è un’estensione, quindi se rilasciata in open source si può scaricare e installare (vedi la <a class="reference internal" href="extensions.html"><span class="doc std std-doc">sezione sulle estensioni</span></a>).
+È molto difficile però scrivere un tema personalizzabile e abbastanza flessibile da essere riutilizzato, quindi se ne trovano molto pochi.</p>
 </section>
 <section id="sviluppo-di-un-tema">
 <h2>Sviluppo di un tema<a class="headerlink" href="#sviluppo-di-un-tema" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
+<p>Lo sviluppo di un tema personalizzato richiede l’inizializzazione di un’estensione con le opportune configurazioni, la creazione e modifica dei template di pagina, del CSS e del Javascript, la gestione della localizzazione delle stringhe all’interno dei template e del codice Javascript.</p>
+<p>Vengono in aiuto alcuni comandi della CLI di CKAN che permettono di inizializzare un’estensione vuota adatta allo scopo, di eseguire CKAN in modalità sviluppo con una serie di utility pre-caricate, di gestire la localizzazione delle stringhe.</p>
+<p>La <a class="reference external" href="https://docs.ckan.org/en/2.9/theming/index.html">documentazione ufficiale</a> è molto ampia e approfondita,
+nella <a class="reference external" href="./extensions#sviluppo-di-un-estensione">sezione sulle estensioni</a> sono riportati i principali passaggi per inizializzare un’estensione vuota su cui lavorare in modalità sviluppo.</p>
 <section id="template-di-pagina-personalizzati">
 <h3>Template di pagina personalizzati<a class="headerlink" href="#template-di-pagina-personalizzati" title="Link a questa intestazione">#</a></h3>
 <p>…</p>
@@ -504,7 +509,7 @@ title="Print to PDF"
 </section>
 <section id="laboratorio">
 <h2>Laboratorio<a class="headerlink" href="#laboratorio" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
+<p>Sviluppiamo un tema personalizzato.</p>
 </section>
 </section>
 
