@@ -51,7 +51,8 @@ Nel nostro caso, la Open Knowledge Foundation descrive una [modalità di svilupp
 3. Inizializzare la nuova estensione: `docker-compose -f docker-compose.yml -f docker-compose.dev.yml exec ckan ckan generate extension --output-dir /srv/app/src_extensions`
 4. Rispondere a tutte le domande
 
-Nella cartella locale `/lab/ckan/src` apparirà la cartella della nuova estensione con nome `ckanext-nome_nuova_estensione`. Per modificarne i file all'interno è forse necessario modificare opportunamente i permessi della cartella.
+Nella cartella locale `/lab/ckan/src` apparirà la cartella della nuova estensione con nome `ckanext-nome_nuova_estensione`.
+Per modificarne i file all'interno è forse necessario modificare opportunamente i permessi della cartella.
 
 5. Aggiungere alla variabile d'ambiente `CKAN__PLUGINS` il nome del plugin fornito dall'estensione appena creata (es. `CKAN__PLUGINS=... nome_nuova_estensione`).
 6. Riavviare il container: `docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d ckan`.
