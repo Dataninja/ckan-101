@@ -8,4 +8,6 @@ Default usage: `python main.py`.
 
 Advanced usage: `python main.py [subject]` (ie. `python main.py friends`).
 
-Execution in docker container: `docker run -it --rm --name lab_python_1 -v $PWD/main.py:/opt/main.py python:3.9-alpine python /opt/main.py friends`.
+#Execution in docker container: `docker run -it --rm --name lab_python_1 -v $PWD/main.py:/opt/main.py python:3.9-alpine python /opt/main.py friends`.
+
+Execution in docker container: `docker run -it --rm --name lab_python_1 -v $PWD/main.py:/opt/main.py python:3.9-slim python /opt/main.py friends`.
