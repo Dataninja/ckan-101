@@ -22,7 +22,7 @@ Nella stessa pagina è inoltre possibile personalizzare gli elementi in homepage
 
 Per piccole modifiche allo stile delle pagine è possibile salvare un codice CSS personalizzato nella pagina di configurazione (`/ckan-admin/config`) sotto la voce "CSS personalizzato". Si tratta di regole CSS globali, caricate in tutte le pagine, per cui è importante definire selettori abbastanza specifici su classi e id.
 
-Esempio per nascondere l'immagine in homepage nella card di benvenuto: `.homepage .featured { display: none; }`.
+Esempio: per cambiare l'immagine in homepage nella card di benvenuto: `.homepage .featured { content:url("https://bit.ly/3D1i8C0"); width: 100%; }`.
 
 È anche possibile impostare una favicon personalizzata valorizzando la variabile d'ambiente `CKAN__FAVICON` con un url assoluto a una risorsa esterna (ed. `CKAN__FAVICON=https://www.estar.toscana.it/wp-content/uploads/2021/04/Logo-Estar_150x150.png`).
 
