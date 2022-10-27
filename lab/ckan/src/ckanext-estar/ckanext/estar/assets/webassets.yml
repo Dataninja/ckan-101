@@ -1,0 +1,14 @@
+# estar-js:
+#   filter: rjsmin
+#   output: ckanext-estar/%(version)s-estar.js
+#   contents:
+#     - js/estar.js
+#   extra:
+#     preload:
+#       - base/main
+
+# estar-css:
+#   filter: cssrewrite
+#   output: ckanext-estar/%(version)s-estar.css
+#   contents:
+#     - css/estar.css

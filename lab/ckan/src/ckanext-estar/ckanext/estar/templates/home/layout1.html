@@ -1,0 +1,15 @@
+{% ckan_extends %}
+
+{% block promoted %}
+<p>{% trans %}block header{% endtrans %}: {{ g.site_title }}</p>
+{{ super() }}
+{% set random_integer = h.estar_random_integer() %}
+<p>{{ _('block footer') }} #{{ (random_integer / 2) | int }}</p>
+<ul>
+  {% for n in range(random_integer) %}
+  {% if n % 2 %}
+  <li>{{ n }}</li>
+  {% endif %}
+  {% endfor %}
+</ul>
+{% endblock %}

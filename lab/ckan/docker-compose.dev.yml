@@ -8,7 +8,7 @@ services:
     build:
       dockerfile: Dockerfile.dev
     environment:
-      - CKAN__PLUGINS=envvars image_view text_view recline_view datastore datapusher estar_theme
+      - CKAN__PLUGINS=envvars image_view text_view recline_view datastore datapusher estar
       - CKAN__VIEWS__DEFAULT_VIEWS=image_view text_view recline_view
       - CKAN__FAVICON=/images/favicon.png
     volumes:

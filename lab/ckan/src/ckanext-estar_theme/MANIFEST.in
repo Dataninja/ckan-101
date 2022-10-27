@@ -1,5 +1,0 @@
-include README.rst
-include LICENSE
-include requirements.txt
-recursive-include ckanext/estar_theme *.html *.json *.js *.less *.css *.mo *.yml
-recursive-include ckanext/estar_theme/migration *.ini *.py *.mako

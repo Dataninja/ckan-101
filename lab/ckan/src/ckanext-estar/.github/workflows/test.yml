@@ -44,5 +44,5 @@ jobs:
 
         ckan -c test.ini db init
     - name: Run tests
-      run: pytest --ckan-ini=test.ini --cov=ckanext.estar_theme --disable-warnings ckanext/estar_theme
+      run: pytest --ckan-ini=test.ini --cov=ckanext.estar --disable-warnings ckanext/estar
 
