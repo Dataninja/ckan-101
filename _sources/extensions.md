@@ -29,7 +29,9 @@ Nella versione dockerizzata di questo repository questi passaggi si traducono ne
 3. [opzionale] aggiungere un eventuale script di inizializzazione del database in `lab/ckan/postgresql/docker-entrypoint-initdb.d`;
 4. [opzionale] aggiungere un eventuale script di inizializzazione in `lab/ckan/ckan/docker-entrypoint.d`;
 5. aggiungere i plugin forniti dall'estensione all'elenco della variabile d'ambiente `CKAN__PLUGINS` e le eventuali configurazioni aggiuntive nel file `.env`;
-6. rifare la build delle immagini e riavviare i container con `docker-compose -f docker-compose.yml -f docker-compose.ext.yml up --build -d`.
+6. dalla cartella `lab/ckan/` rifare la build delle immagini e riavviare i container con `docker-compose -f docker-compose.yml -f docker-compose.ext.yml up --build -d`.
+
+> ATTENZIONE: in `docker-compose.ext.yml` viene montato il file di configurazione `lab/ckan/solt/schema.xml` nel container di Solr per applicare le modifiche richieste da ckanext-dcatapit (vedi [documentazione ufficiale](https://github.com/geosolutions-it/ckanext-dcatapit#installation) al punto 11).
 
 ### Rimozione
 
@@ -42,20 +44,7 @@ Infine rifare la build delle immagini e riavviare i container.
 
 ## Sviluppo di un'estensione
 
-La [documentazione ufficiale](https://docs.ckan.org/en/2.9/extensions/tutorial.html) mostra lo sviluppo da zero di un'estensione all'interno di un tutorial per spiegare i vari passaggi necessari per estendere le funzionalità di CKAN.
-
-Nel nostro caso, la Open Knowledge Foundation descrive una [modalità di sviluppo](https://github.com/okfn/docker-ckan#development-mode) direttamente all'interno di un container ottimizzato per questo scopo.
-
-1. Fare la build dell'immagine di sviluppo: `docker-compose -f docker-compose.yml -d docker-compose.dev.yml build ckan`
-2. Eseguire i container in modalità sviluppo: `docker-compose -f docker-compose.yml -d docker-compose.dev.yml build ckan`
-3. Inizializzare la nuova estensione: `docker-compose -f docker-compose.yml -f docker-compose.dev.yml exec ckan ckan generate extension --output-dir /srv/app/src_extensions`
-4. Rispondere a tutte le domande
-
-Nella cartella locale `/lab/ckan/src` apparirà la cartella della nuova estensione con nome `ckanext-nome_nuova_estensione`.
-Per modificarne i file all'interno è forse necessario modificare opportunamente i permessi della cartella.
-
-5. Aggiungere alla variabile d'ambiente `CKAN__PLUGINS` il nome del plugin fornito dall'estensione appena creata (es. `CKAN__PLUGINS=... nome_nuova_estensione`).
-6. Riavviare il container: `docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d ckan`.
+Si veda la sezione dedicata allo [sviluppo di un tema personalizzato](./themes#sviluppo-di-un-tema).
 
 ## Laboratorio
 

@@ -132,8 +132,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="plugins.html">
-   Plugin
+  <a class="reference internal" href="extensions.html">
+   Estensioni
   </a>
  </li>
  <li class="toctree-l1">
@@ -332,17 +332,19 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#metadati">
    Metadati
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#datastore">
-   Datastore
-  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#filestore">
      Filestore
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datastore">
+   Datastore
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#datapusher">
      Datapusher
@@ -356,23 +358,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dati-geospaziali">
-   Dati geospaziali
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#anteprime-e-visualizzazioni-dati">
    Anteprime e visualizzazioni dati
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#application-programming-interface-api-rest">
-   Application Programming Interface (API REST)
+  <a class="reference internal nav-link" href="#dati-geospaziali">
+   Dati geospaziali
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#laboratorio">
-   Laboratorio
+  <a class="reference internal nav-link" href="#application-programming-interface-api-rest">
+   Application Programming Interface (API REST)
   </a>
  </li>
 </ul>
@@ -398,17 +395,19 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#metadati">
    Metadati
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#datastore">
-   Datastore
-  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#filestore">
      Filestore
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datastore">
+   Datastore
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#datapusher">
      Datapusher
@@ -422,23 +421,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dati-geospaziali">
-   Dati geospaziali
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#anteprime-e-visualizzazioni-dati">
    Anteprime e visualizzazioni dati
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#application-programming-interface-api-rest">
-   Application Programming Interface (API REST)
+  <a class="reference internal nav-link" href="#dati-geospaziali">
+   Dati geospaziali
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#laboratorio">
-   Laboratorio
+  <a class="reference internal nav-link" href="#application-programming-interface-api-rest">
+   Application Programming Interface (API REST)
   </a>
  </li>
 </ul>
@@ -453,42 +447,50 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="gestione-dati">
 <h1>Gestione dati<a class="headerlink" href="#gestione-dati" title="Link a questa intestazione">#</a></h1>
-<p>…</p>
+<p>CKAN è un Data Management System il cui scopo principale è gestire metadati, cioè informazioni strutturate che descrivono altri dati.</p>
 <section id="metadati">
 <h2>Metadati<a class="headerlink" href="#metadati" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
+<p>La principale entità rappresentata da CKAN è il <em>dataset</em> (chiamato storicamente anche <em>package</em>) che contiene i metadati secondo uno schema proprietario, ma ormai divenuto uno <em>standard de facto</em>.</p>
+<p>A ogni dataset possono essere associate delle risorse (chiamate <em>resources</em>) che contengono rappresentazioni dei dati veri e propri (descritti dai metadati). Possono essere file statici in vari formati (es. CSV, TSV, XLSX e JSON) o URL a risorse remote (es. web services).</p>
+<blockquote>
+<div><p>NOTA: se si vuole aderire agli standard internazionali su schemi e formati dei metadati, l’estensione <code class="docutils literal notranslate"><span class="pre">ckanext-dcat</span></code> (vedi <a class="reference external" href="https://github.com/ckan/ckanext-dcat">documentazione ufficiale</a>) permette di gestirli ed esporli secondo lo standard <a class="reference external" href="https://www.w3.org/TR/vocab-dcat/">DCAT</a> del W3C, adottato anche dall’Unione Europea (standard <a class="reference external" href="https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe/release/211">DCAT_AP</a>) e dall’Italia (standard <a class="reference external" href="https://www.dati.gov.it/content/dcat-ap-it-v10-profilo-italiano-dcat-ap-0">DCAT_AP-IT</a>).</p>
+</div></blockquote>
+<section id="filestore">
+<h3>Filestore<a class="headerlink" href="#filestore" title="Link a questa intestazione">#</a></h3>
+<p>Il plugin <code class="docutils literal notranslate"><span class="pre">filestore</span></code> integrato in CKAN e attivato di default permette di creare risorse caricando file statici (es. CSV) che l’utente finale può scaricare (vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/maintaining/filestore.html">documentazione ufficiale</a>).</p>
+</section>
 </section>
 <section id="datastore">
 <h2>Datastore<a class="headerlink" href="#datastore" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
-<section id="filestore">
-<h3>Filestore<a class="headerlink" href="#filestore" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
-</section>
+<p>Il plugin <code class="docutils literal notranslate"><span class="pre">datastore</span></code> integrato in CKAN e attivabile a richiesta permette di indicizzare all’interno del database anche il contenuto dei file caricati nelle risorse (es. CSV) così che l’utente finale può non solo scaricare i file originari, ma anche interrogarli direttamente (vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/maintaining/datastore.html">documentazione ufficiale</a>).</p>
 <section id="datapusher">
 <h3>Datapusher<a class="headerlink" href="#datapusher" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
+<p>Il plugin <code class="docutils literal notranslate"><span class="pre">datapusher</span></code> integrato in CKAN e attivabile a richiesta, ma che richiede l’esecuzione di un <a class="reference external" href="https://github.com/ckan/datapusher">servizio aggiuntivo</a>, permette di automatizzare l’inserimento del contenuto dei file caricati come risorse nel Filestore all’interno del Datastore (vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/maintaining/datastore.html#datapusher-automatically-add-data-to-the-datastore">documentazione ufficiale</a>).</p>
 </section>
 </section>
 <section id="harvesting">
 <h2>Harvesting<a class="headerlink" href="#harvesting" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
-</section>
-<section id="dati-geospaziali">
-<h2>Dati geospaziali<a class="headerlink" href="#dati-geospaziali" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
+<p>Un’istanza di CKAN può popolare automaticamente il proprio catalogo a partire da cataloghi di altre istanze di CKAN (o che espongono API compatibili con quelle di CKAN, come nel caso di <a class="reference external" href="https://getdkan.org/">DKAN</a>).</p>
+<p>In questo modo si trasforma in una sorta di meta-catalogo che raccoglie e aggrega altri cataloghi e li rende ricercabile in un unico luogo (es. <a class="reference external" href="https://www.dati.gov.it/">www.dati.gov.it</a>).</p>
+<p>Il processo di importazione e sincronizzazione di cataloghi tra istanze di CKAN si chiama <code class="docutils literal notranslate"><span class="pre">harvesting</span></code> ed è implementato dall’estensione <code class="docutils literal notranslate"><span class="pre">ckanext-harvest</span></code> (vedi <a class="reference external" href="https://github.com/ckan/ckanext-harvest">documentazione ufficiale</a>).</p>
 </section>
 <section id="anteprime-e-visualizzazioni-dati">
 <h2>Anteprime e visualizzazioni dati<a class="headerlink" href="#anteprime-e-visualizzazioni-dati" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
+<p>Nelle pagine delle risorse l’utente può scaricare il file caricato oppure seguire il link alla risorsa remota grazie al <code class="docutils literal notranslate"><span class="pre">filestore</span></code>.</p>
+<p>Se è attivo il <code class="docutils literal notranslate"><span class="pre">datastore</span></code> può anche visualizzare un’anteprima interattiva della risorsa grazie alle viste (<em>views</em>) eventualmente configurate (vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/maintaining/data-viewer.html">documentazione ufficiale</a>).</p>
+<p>Le viste sono opzionali e quelle di default sono <code class="docutils literal notranslate"><span class="pre">image_view</span></code> e <code class="docutils literal notranslate"><span class="pre">text_view</span></code>. Se il datastore è attivo, si può aggiungere anche la vista <code class="docutils literal notranslate"><span class="pre">recline_view</span></code> che permette all’utente di visualizzare i dati tabellari sotto forma di tabella ricercabile e filtrabile, come grafico o come mappa.</p>
+<p>Le estensioni possono fornire anche nuove viste, come per esempio <code class="docutils literal notranslate"><span class="pre">ckanext-geoview</span></code> (vedi <a class="reference external" href="https://github.com/ckan/ckanext-geoview">documentazione ufficiale</a>).</p>
+</section>
+<section id="dati-geospaziali">
+<h2>Dati geospaziali<a class="headerlink" href="#dati-geospaziali" title="Link a questa intestazione">#</a></h2>
+<p>I tipici formati dati dei Sistemi Informativi Geografici (<a class="reference external" href="https://en.wikipedia.org/wiki/Geographic_information_system">GIS</a>) possono essere gestiti nativamente grazie all’estensione <code class="docutils literal notranslate"><span class="pre">ckanext-spatial</span></code> (vedi <a class="reference external" href="https://github.com/ckan/ckanext-spatial">documentazione ufficiale</a>), che estende il datastore sfruttando le funzionalità geografiche del database <a class="reference external" href="https://postgis.net/">PostGIS</a>.</p>
+<p>Per esempio è possibile associare informazioni geografiche ai dataset e offrire un motore di ricerca per luoghi (vedi <a class="reference external" href="https://docs.ckan.org/projects/ckanext-spatial/en/latest/spatial-search.html">documentazione ufficiale</a>).</p>
 </section>
 <section id="application-programming-interface-api-rest">
 <h2>Application Programming Interface (API REST)<a class="headerlink" href="#application-programming-interface-api-rest" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
-</section>
-<section id="laboratorio">
-<h2>Laboratorio<a class="headerlink" href="#laboratorio" title="Link a questa intestazione">#</a></h2>
-<p>…</p>
+<p>Quella grafica è l’interfaccia principale per la fruizione e gestione manuale dei contenuti di CKAN.</p>
+<p>CKAN mette a disposizione anche un ricco e completo set di API (chiamate <code class="docutils literal notranslate"><span class="pre">Action</span> <span class="pre">API</span></code>, vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/api/index.html">documentazione ufficiale</a>) per accedere a dati e metadati, oltre che per la gestione dei contenuti nel caso di richieste opportunamente autenticate.</p>
+<p>Esempio: <a class="reference external" href="http://localhost:5000/api/3/action/package_list">curl localhost:5000/api/3/action/package_list</a>.</p>
 </section>
 </section>
 

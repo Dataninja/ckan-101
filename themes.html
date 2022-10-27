@@ -344,6 +344,16 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#panoramica-di-un-estensione">
+     Panoramica di un’estensione
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-statici">
+     File statici
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#template-di-pagina-personalizzati">
      Template di pagina personalizzati
     </a>
@@ -351,11 +361,6 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#css-personalizzato">
      CSS personalizzato
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#immagini-personalizzate">
-     Immagini personalizzate
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -410,6 +415,16 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#panoramica-di-un-estensione">
+     Panoramica di un’estensione
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-statici">
+     File statici
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#template-di-pagina-personalizzati">
      Template di pagina personalizzati
     </a>
@@ -417,11 +432,6 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#css-personalizzato">
      CSS personalizzato
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#immagini-personalizzate">
-     Immagini personalizzate
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -477,34 +487,283 @@ title="Print to PDF"
 </section>
 <section id="temi-di-terze-parti">
 <h2>Temi di terze parti<a class="headerlink" href="#temi-di-terze-parti" title="Link a questa intestazione">#</a></h2>
-<p>Un tema di CKAN è un’estensione, quindi se rilasciata in open source si può scaricare e installare (vedi la <a class="reference internal" href="extensions.html"><span class="doc std std-doc">sezione sulle estensioni</span></a>).
-È molto difficile però scrivere un tema personalizzabile e abbastanza flessibile da essere riutilizzato, quindi se ne trovano molto pochi.</p>
+<p>Un tema di CKAN è un’estensione, quindi se rilasciata in open source si può scaricare e installare (vedi la <a class="reference internal" href="extensions.html"><span class="doc std std-doc">sezione sulle estensioni</span></a>).</p>
+<p>È molto difficile però scrivere un tema personalizzabile e abbastanza flessibile da essere riutilizzato, quindi se ne trovano molto pochi.</p>
 </section>
 <section id="sviluppo-di-un-tema">
 <h2>Sviluppo di un tema<a class="headerlink" href="#sviluppo-di-un-tema" title="Link a questa intestazione">#</a></h2>
 <p>Lo sviluppo di un tema personalizzato richiede l’inizializzazione di un’estensione con le opportune configurazioni, la creazione e modifica dei template di pagina, del CSS e del Javascript, la gestione della localizzazione delle stringhe all’interno dei template e del codice Javascript.</p>
 <p>Vengono in aiuto alcuni comandi della CLI di CKAN che permettono di inizializzare un’estensione vuota adatta allo scopo, di eseguire CKAN in modalità sviluppo con una serie di utility pre-caricate, di gestire la localizzazione delle stringhe.</p>
-<p>La <a class="reference external" href="https://docs.ckan.org/en/2.9/theming/index.html">documentazione ufficiale</a> è molto ampia e approfondita,
-nella <a class="reference external" href="./extensions#sviluppo-di-un-estensione">sezione sulle estensioni</a> sono riportati i principali passaggi per inizializzare un’estensione vuota su cui lavorare in modalità sviluppo.</p>
+<p>La <a class="reference external" href="https://docs.ckan.org/en/2.9/extensions/tutorial.html">documentazione ufficiale</a> mostra lo sviluppo da zero di un’estensione all’interno di un tutorial per spiegare i vari passaggi necessari per estendere le funzionalità di CKAN.</p>
+<p>Nel nostro caso, la Open Knowledge Foundation descrive una <a class="reference external" href="https://github.com/okfn/docker-ckan#development-mode">modalità di sviluppo</a> direttamente all’interno di un container ottimizzato per questo scopo.</p>
+<ol class="simple">
+<li><p>Fare la build dell’immagine di sviluppo: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.dev.yml</span> <span class="pre">build</span> <span class="pre">ckan</span></code></p></li>
+<li><p>Eseguire i container in modalità sviluppo: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.dev.yml</span> <span class="pre">up</span> <span class="pre">-d</span></code></p></li>
+<li><p>Inizializzare la nuova estensione: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.dev.yml</span> <span class="pre">exec</span> <span class="pre">ckan</span> <span class="pre">ckan</span> <span class="pre">generate</span> <span class="pre">extension</span> <span class="pre">--output-dir</span> <span class="pre">/srv/app/src_extensions</span></code></p></li>
+</ol>
+<p>Rispondere a tutte le domande poste:</p>
+<ol class="simple">
+<li><p>Nome dell’estensione (deve iniziare con <code class="docutils literal notranslate"><span class="pre">ckanext-</span></code>, es. <code class="docutils literal notranslate"><span class="pre">ckanext-estar</span></code>)</p></li>
+<li><p>Nome dell’autore</p></li>
+<li><p>E-mail dell’autore</p></li>
+<li><p>Nome utente o organizzazione su Github</p></li>
+<li><p>Descrizione dell’estensione</p></li>
+<li><p>Tag</p></li>
+</ol>
+<p>Nella cartella locale <code class="docutils literal notranslate"><span class="pre">lab/ckan/src</span></code> apparirà la cartella della nuova estensione con il nome scelto al punto 1 (es. <code class="docutils literal notranslate"><span class="pre">lab/ckan/src/ckanext-estar</span></code>).</p>
+<p>Per modificarne i file all’interno è forse necessario modificare opportunamente i permessi della cartella.</p>
+<ol class="simple">
+<li><p>Aggiungere alla variabile d’ambiente <code class="docutils literal notranslate"><span class="pre">CKAN__PLUGINS</span></code> il nome del plugin fornito dall’estensione appena creata (es. <code class="docutils literal notranslate"><span class="pre">CKAN__PLUGINS=...</span> <span class="pre">nome_nuova_estensione</span></code> senza il prefisso <code class="docutils literal notranslate"><span class="pre">ckanext-</span></code>).</p></li>
+<li><p>Riavviare il container: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.dev.yml</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">ckan</span></code>.</p></li>
+</ol>
+<p>La versione di CKAN in esecuzione raggiungibile all’indirizzo <code class="docutils literal notranslate"><span class="pre">localhost:5000</span></code> è ora in modalità sviluppo, per cui l’interfaccia presenta degli elementi interattivi che contengono informazioni di debug:</p>
+<ul class="simple">
+<li><p>in alto a sinistra ci sono <em>Controller</em> e <em>Action</em> utilizzati dalla pagina corrente;</p></li>
+<li><p>in basso nel footer c’è una sezione nascosta, ma visibile cliccando sul messaggio <em>Debug</em>;</p></li>
+<li><p>a destra c’è un menu di debug con una serie di risorse visibili cliccando sulle varie voci.</p></li>
+</ul>
+<section id="panoramica-di-un-estensione">
+<h3>Panoramica di un’estensione<a class="headerlink" href="#panoramica-di-un-estensione" title="Link a questa intestazione">#</a></h3>
+<p>Nella cartella appena creata in <code class="docutils literal notranslate"><span class="pre">lab/ckan/src/ckanext-estar</span></code> ci sono vari file pre-configurati:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code> contiene un modello di documentazione raccomandato per l’estensione</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setup.py</span></code> contiene la definizione dell’estensione con le informazioni indicate interattivamente durante la creazione, è bene verificare che tutte le informazioni siano corrette e aggiornate</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> contiene configurazioni di default per <a class="reference external" href="https://babel.pocoo.org/en/latest/">Babel</a>, il gestore della localizzazione delle stringhe</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> contiene gli eventuali pacchetti aggiuntivi da cui l’estensione dipende</p></li>
+</ul>
+<p>Nella sotto cartella <code class="docutils literal notranslate"><span class="pre">ckanext/estar/</span></code> c’è il vero e proprio codice che implementa le funzionalità dell’estensione:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plugin.py</span></code> contiene la definizione dei plugin offerti dall’estensione, sotto forma di classi che ereditano da <code class="docutils literal notranslate"><span class="pre">ckan.plugins.SingletonPlugin</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public/</span></code> contiene i file statici che saranno serviti a partire dalla root del sito (es. fogli di stile, immagini, ecc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">templates/</span></code> contiene i template di pagina secondo la <a class="reference external" href="https://github.com/ckan/ckan/tree/master/ckan/templates">struttura originaria</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fanstatic/</span></code> contiene i file Javascript caricati dall’estensione (es. per le funzionalità di un widget)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i18n/</span></code> contiene i file di localizzazione delle stringhe</p></li>
+</ul>
+<blockquote>
+<div><p>ATTENZIONE: le classi definite in <code class="docutils literal notranslate"><span class="pre">plugin.py</span></code> devono essere opportunamente elencate anche nel file <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> nella variabile <code class="docutils literal notranslate"><span class="pre">entry_points</span></code></p>
+</div></blockquote>
+</section>
+<section id="file-statici">
+<h3>File statici<a class="headerlink" href="#file-statici" title="Link a questa intestazione">#</a></h3>
+<p>Qualsiasi file in <code class="docutils literal notranslate"><span class="pre">public/</span></code> sarà pubblicato a partire dalla root del sito (vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/theming/static-files.html">documentazione ufficiale</a>).
+Per esempio il file <code class="docutils literal notranslate"><span class="pre">public/images/favicon.png</span></code> sarà raggiungibile all’indirizzo <code class="docutils literal notranslate"><span class="pre">localhost:5000/images/favicon.png</span></code>.</p>
+</section>
 <section id="template-di-pagina-personalizzati">
 <h3>Template di pagina personalizzati<a class="headerlink" href="#template-di-pagina-personalizzati" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
+<p>CKAN usa Jinja come motore di template e fa ampio uso del concetto di <em>composizione</em>.
+Si parte dai <a class="reference external" href="https://github.com/ckan/ckan/tree/2.9/ckan/templates">template di base</a> definiti da CKAN e si sovrascrivono o si estendono opportunamente, andando a modificare solo le parti di interesse (i <em>blocks</em>).</p>
+<p>Per esempio, se è attivo il primo layout «Introductory area, search, featured group and featured organization» e si crea un file <code class="docutils literal notranslate"><span class="pre">templates/home/layout1.html</span></code> vuoto, questo sovrascriverà interamente l”<a class="reference external" href="https://github.com/ckan/ckan/blob/2.9/ckan/templates/home/layout1.html">originale</a> e in homepage non si vedrà più il corpo centrale della pagina.</p>
+<blockquote>
+<div><p>ATTENZIONE: a volte l’aggiunta di un nuovo template non ha effetti sulla pagina del sito, probabilmente a causa della cache delle pagine. Aspettare oppure fare un restart del container con <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.dev.yml</span> <span class="pre">restart</span> <span class="pre">ckan</span></code>.</p>
+</div></blockquote>
+<p>Se invece di sostituire un template, lo si vuole estendere, è sufficiente inserire in testa al file il codice <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">ckan_extends</span> <span class="pre">%}</span></code> (un <em>tag</em> nel linguaggio di Jinja, si veda la <a class="reference external" href="https://docs.ckan.org/en/2.9/theming/templates.html#extending-templates-with-ckan-extends">documentazione ufficiale</a>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">ckan_extends</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>I template possono definire dei tag <em>block</em> che possiedono un nome univoco e che possono essere sovrascritti indipendentemente dal resto.</p>
+<p>Per esempio, per rimuovere solo il riquadro con il testo di introduzione dalla homepage è sufficiente sovrascrivere il solo block <code class="docutils literal notranslate"><span class="pre">promoted</span></code> del <code class="docutils literal notranslate"><span class="pre">layout1.html</span></code> aggiungendo all’omonimo file dell’estensione il codice <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">block</span> <span class="pre">promoted</span> <span class="pre">%}{%</span> <span class="pre">endblock</span> <span class="pre">%}</span></code> (vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/theming/templates.html#replacing-template-blocks-with-block">documentazione ufficiale</a>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">ckan_extends</span> <span class="o">%</span><span class="p">}</span>
+
+<span class="p">{</span><span class="o">%</span> <span class="n">block</span> <span class="n">promoted</span> <span class="o">%</span><span class="p">}{</span><span class="o">%</span> <span class="n">endblock</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Se invece di sostituire del tutto il contenuto di un blocco si volesse estenderlo aggiungendo elementi prima o dopo il contenuto originale, si può usare la variabile <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">super()</span> <span class="pre">}}</span></code> (vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/theming/templates.html#extending-parent-blocks-with-jinja-s-super">documentazione ufficiale</a>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">ckan_extends</span> <span class="o">%</span><span class="p">}</span>
+
+<span class="p">{</span><span class="o">%</span> <span class="n">block</span> <span class="n">promoted</span> <span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Intestazione</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="p">{{</span> <span class="nb">super</span><span class="p">()</span> <span class="p">}}</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Piè</span> <span class="n">di</span> <span class="n">blocco</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endblock</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>All’interno dei template si possono definire delle variabili e poi utilizzarle all’interno delle <em>espressioni</em>.
+Alcune variabili notevoli sono definite a livello globale, come <code class="docutils literal notranslate"><span class="pre">app_globals</span></code>, accessibile anche con l’alias <code class="docutils literal notranslate"><span class="pre">g</span></code> (vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/theming/templates.html#expressions-and-variables">documentazione ufficiale</a>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">ckan_extends</span> <span class="o">%</span><span class="p">}</span>
+
+<span class="p">{</span><span class="o">%</span> <span class="n">block</span> <span class="n">promoted</span> <span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Intestazione</span> <span class="n">di</span> <span class="p">{{</span> <span class="n">g</span><span class="o">.</span><span class="n">site_title</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="p">{{</span> <span class="nb">super</span><span class="p">()</span> <span class="p">}}</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Piè</span> <span class="n">di</span> <span class="n">blocco</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endblock</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Al pari delle variabili, che vengono semplicemente stampate, nelle espressioni si possono usare metodi che vengono eseguiti.
+Si chiamano <em>helper functions</em>, <a class="reference external" href="https://docs.ckan.org/en/2.9/theming/template-helper-functions.html">ce ne sono molte pre-definite</a> e possono essere definite all’interno di un’estensione nel file <code class="docutils literal notranslate"><span class="pre">plugin.py</span></code>.</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="w">import ckan.plugins as plugins</span>
+<span class="w">import ckan.plugins.toolkit as toolkit</span>
+<span class="gi">+from random import randrange</span><span class="w"></span>
+
+<span class="gi">+def random_integer():</span><span class="w"></span>
+<span class="gi">+    return randrange(1, 10)</span><span class="w"></span>
+
+<span class="w">class EstarThemePlugin(plugins.SingletonPlugin):</span>
+<span class="w"> </span>   plugins.implements(plugins.IConfigurer)<span class="w"></span>
+<span class="gi">+    plugins.implements(plugins.ITemplateHelpers)</span><span class="w"></span>
+
+<span class="w"> </span>   # IConfigurer<span class="w"></span>
+
+<span class="w"> </span>   def update_config(self, config_):<span class="w"></span>
+<span class="w"> </span>       toolkit.add_template_directory(config_, &#39;templates&#39;)<span class="w"></span>
+<span class="w"> </span>       toolkit.add_public_directory(config_, &#39;public&#39;)<span class="w"></span>
+<span class="w"> </span>       toolkit.add_resource(&#39;fanstatic&#39;, &#39;estar&#39;)<span class="w"></span>
+
+<span class="gi">+    def get_helpers(self):</span><span class="w"></span>
+<span class="gi">+        return {</span><span class="w"></span>
+<span class="gi">+            &quot;estar_random_integer&quot;: random_integer</span><span class="w"></span>
+<span class="gi">+        }</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Tutte le variabili e le funzioni accessibili globalmente nei template sono elencate e descritte nella <a class="reference external" href="https://docs.ckan.org/en/2.9/theming/variables-and-functions.html">documentazione ufficiale</a>.</p>
+<p>I tag di Jinja supportano un sotto insieme delle funzionalità di Python, per esempio ci sono i cicli e i blocchi condizionali.
+Si possono anche usare tutti i metodi dei tipi di Python, come quelli di stringhe, liste e dizionari.
+La concatenazione di funzioni si fa con la <code class="docutils literal notranslate"><span class="pre">|</span></code> (pipe).</p>
+<p>Esempio completo per il file <code class="docutils literal notranslate"><span class="pre">layout1.html</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">ckan_extends</span> <span class="o">%</span><span class="p">}</span>
+
+<span class="p">{</span><span class="o">%</span> <span class="n">block</span> <span class="n">promoted</span> <span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Intestazione</span> <span class="n">di</span> <span class="p">{{</span> <span class="n">g</span><span class="o">.</span><span class="n">site_title</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="p">{{</span> <span class="nb">super</span><span class="p">()</span> <span class="p">}}</span>
+<span class="p">{</span><span class="o">%</span> <span class="nb">set</span> <span class="n">random_integer</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">estar_random_integer</span><span class="p">()</span> <span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Piè</span> <span class="n">di</span> <span class="n">blocco</span> <span class="n">n</span><span class="o">.</span> <span class="p">{{</span> <span class="p">(</span><span class="n">random_integer</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">|</span> <span class="nb">int</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+  <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">random_integer</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+  <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">%</span><span class="p">}</span>
+  <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">n</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+  <span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
+  <span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endblock</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+</div>
 </section>
 <section id="css-personalizzato">
 <h3>CSS personalizzato<a class="headerlink" href="#css-personalizzato" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
-</section>
-<section id="immagini-personalizzate">
-<h3>Immagini personalizzate<a class="headerlink" href="#immagini-personalizzate" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
+<p>Per l’inclusione di fogli di stile nelle pagine si può sovrascrivere il blocco <code class="docutils literal notranslate"><span class="pre">styles</span></code> del template <code class="docutils literal notranslate"><span class="pre">base.html</span></code>, quello utilizzato da tutte le pagine del sito, per far caricare un file statico nella cartella <code class="docutils literal notranslate"><span class="pre">public/</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">ckan_extends</span> <span class="o">%</span><span class="p">}</span>
+
+<span class="p">{</span><span class="o">%</span> <span class="n">block</span> <span class="n">styles</span> <span class="o">%</span><span class="p">}</span>
+  <span class="p">{{</span> <span class="nb">super</span><span class="p">()</span> <span class="p">}}</span>
+  <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;/css/estar.css&quot;</span> <span class="o">/&gt;</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endblock</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>ATTENZIONE: recentemente è stato introdotto un metodo più avanzato per l’inclusione di CSS personalizzato che fa uso di <a class="reference external" href="https://webassets.readthedocs.io/en/latest/">Webassets</a>, si rimanda alla <a class="reference external" href="https://docs.ckan.org/en/2.9/theming/webassets.html">documentazione ufficiale</a> per tutti i dettagli.</p>
+</div></blockquote>
 </section>
 <section id="traduzioni-personalizzate">
 <h3>Traduzioni personalizzate<a class="headerlink" href="#traduzioni-personalizzate" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
+<p>Il supporto per la localizzazione non è attivo di default, per cui bisogna modificare il file <code class="docutils literal notranslate"><span class="pre">plugin.py</span></code> (vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/extensions/translating-extensions.html">documentazione ufficiale</a>).</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="w">import ckan.plugins as plugins</span>
+<span class="w">import ckan.plugins.toolkit as toolkit</span>
+<span class="gi">+from ckan.lib.plugins import DefaultTranslation</span><span class="w"></span>
+<span class="w">from random import randrange</span>
+
+<span class="w">def random_integer():</span>
+<span class="w"> </span>   return randrange(1, 10)<span class="w"></span>
+
+<span class="gd">-class EstarThemePlugin(plugins.SingletonPlugin):</span><span class="w"></span>
+<span class="gi">+class MyCustomThemePlugin(plugins.SingletonPlugin, DefaultTranslation):</span><span class="w"></span>
+<span class="gi">+    plugins.implements(plugins.ITranslation)</span><span class="w"></span>
+<span class="w"> </span>   plugins.implements(plugins.IConfigurer)<span class="w"></span>
+<span class="w"> </span>   plugins.implements(plugins.ITemplateHelpers)<span class="w"></span>
+
+<span class="w"> </span>   # IConfigurer<span class="w"></span>
+
+<span class="w"> </span>   def update_config(self, config_):<span class="w"></span>
+<span class="w"> </span>       toolkit.add_template_directory(config_, &#39;templates&#39;)<span class="w"></span>
+<span class="w"> </span>       toolkit.add_public_directory(config_, &#39;public&#39;)<span class="w"></span>
+<span class="w"> </span>       toolkit.add_resource(&#39;fanstatic&#39;, &#39;estar&#39;)<span class="w"></span>
+
+<span class="w"> </span>   def get_helpers(self):<span class="w"></span>
+<span class="w"> </span>       return {<span class="w"></span>
+<span class="w"> </span>           &quot;estar_random_integer&quot;: random_integer<span class="w"></span>
+<span class="w"> </span>       }<span class="w"></span>
+</pre></div>
+</div>
+<p>Nei template ora è possibile usare le espressioni <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">trans</span> <span class="pre">%}{%</span> <span class="pre">endtrans</span> <span class="pre">%}</span></code> o la funzione <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">_('')</span> <span class="pre">}}</span></code> per la localizzazione (vedi <a class="reference external" href="https://docs.ckan.org/en/2.9/contributing/string-i18n.html#internationalizating-strings-in-jinja2-templates">documentazione ufficiale</a>).</p>
+<p>Per esempio, nel template <code class="docutils literal notranslate"><span class="pre">layout1.html</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">ckan_extends</span> <span class="o">%</span><span class="p">}</span>
+
+<span class="p">{</span><span class="o">%</span> <span class="n">block</span> <span class="n">promoted</span> <span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">{</span><span class="o">%</span> <span class="n">trans</span> <span class="o">%</span><span class="p">}</span><span class="n">block</span> <span class="n">header</span><span class="p">{</span><span class="o">%</span> <span class="n">endtrans</span> <span class="o">%</span><span class="p">}:</span> <span class="p">{{</span> <span class="n">g</span><span class="o">.</span><span class="n">site_title</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="p">{{</span> <span class="nb">super</span><span class="p">()</span> <span class="p">}}</span>
+<span class="p">{</span><span class="o">%</span> <span class="nb">set</span> <span class="n">random_integer</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">estar_random_integer</span><span class="p">()</span> <span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">_</span><span class="p">(</span><span class="s1">&#39;block footer&#39;</span><span class="p">)</span> <span class="p">}}</span> <span class="c1">#{{ (random_integer / 2) | int }}&lt;/p&gt;</span>
+<span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+  <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">random_integer</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+  <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">%</span><span class="p">}</span>
+  <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">n</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+  <span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
+  <span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endblock</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Ora è necessario generare tutti i file di traduzione e inserire le stringhe localizzate.</p>
+<ol class="simple">
+<li><p>Collegarsi al container in esecuzione: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.dev.yml</span> <span class="pre">exec</span> <span class="pre">ckan</span> <span class="pre">bash</span></code></p></li>
+<li><p>Entrare nella cartella dell’estensione: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">src_extensions/ckanext-estar/</span></code></p></li>
+<li><p>Generare il file <code class="docutils literal notranslate"><span class="pre">i18n/ckanext-estar.pot</span></code>: <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">setup.py</span> <span class="pre">extract_messages</span></code> (l’estrazione dei messaggi viene effettuata in tutti i file indicati nella variabile <code class="docutils literal notranslate"><span class="pre">message_extractors</span></code> definita nel file <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>)</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#: ckanext/estar/templates/home/layout1.html:4</span>
+<span class="n">msgid</span> <span class="s2">&quot;block header&quot;</span>
+<span class="n">msgstr</span> <span class="s2">&quot;&quot;</span>
+
+<span class="c1">#: ckanext/estar/templates/home/layout1.html:7</span>
+<span class="n">msgid</span> <span class="s2">&quot;block footer&quot;</span>
+<span class="n">msgstr</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Inizializzare il catalogo per la lingua scelta: <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">setup.py</span> <span class="pre">init_catalog</span> <span class="pre">-l</span> <span class="pre">it</span></code></p></li>
+<li><p>Tradurre le stringhe estratte nel nuovo file <code class="docutils literal notranslate"><span class="pre">ckanext-estar.po</span></code> nella cartella <code class="docutils literal notranslate"><span class="pre">i18n/it/LC_MESSAGES/</span></code> valorizzando le variabili <code class="docutils literal notranslate"><span class="pre">msgstr</span></code></p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#: ckanext/estar/templates/home/layout1.html:4</span>
+<span class="n">msgid</span> <span class="s2">&quot;block header&quot;</span>
+<span class="n">msgstr</span> <span class="s2">&quot;Intestazione del blocco&quot;</span>
+
+<span class="c1">#: ckanext/estar/templates/home/layout1.html:7</span>
+<span class="n">msgid</span> <span class="s2">&quot;block footer&quot;</span>
+<span class="n">msgstr</span> <span class="s2">&quot;Piè di blocco&quot;</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Compilare il catalogo per la lingua scelta: <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">setup.py</span> <span class="pre">compile_catalog</span></code> (viene creato/aggiornato il file <code class="docutils literal notranslate"><span class="pre">ckanext-estar.mo</span></code> nella cartella <code class="docutils literal notranslate"><span class="pre">i18n/it/LC_MESSAGES/</span></code>)</p></li>
+<li><p>Ricaricare la homepage di CKAN</p></li>
+</ol>
+<p>Per aggiungere la localizzazione in altre lingue è sufficiente ripetere il procedimento dal punto 4.</p>
+<p>Con la stessa procedura è possibile sostituire le traduzioni originali di stringhe usate in CKAN, ma non necessariamente presenti nei template dell’estensione.</p>
+<p>Per esempio si può modificare direttamente la traduzione della stringa <code class="docutils literal notranslate"><span class="pre">Welcome</span> <span class="pre">to</span> <span class="pre">CKAN</span></code> contenuta nel template <code class="docutils literal notranslate"><span class="pre">templates/home/snippets/promoted.html</span></code> (vedi <a class="reference external" href="https://github.com/ckan/ckan/blob/ckan-2.9.6/ckan/templates/home/snippets/promoted.html">originale</a>) modificando il file <code class="docutils literal notranslate"><span class="pre">i18n/it/LC_MESSAGES/ckanext-estar.po</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#: ckanext/estar/templates/home/layout1.html:4</span>
+<span class="n">msgid</span> <span class="s2">&quot;block header&quot;</span>
+<span class="n">msgstr</span> <span class="s2">&quot;Intestazione del blocco&quot;</span>
+
+<span class="c1">#: ckanext/estar/templates/home/layout1.html:7</span>
+<span class="n">msgid</span> <span class="s2">&quot;block footer&quot;</span>
+<span class="n">msgstr</span> <span class="s2">&quot;Piè di blocco&quot;</span>
+
+<span class="c1">#:</span>
+<span class="n">msgid</span> <span class="s2">&quot;Welcome to CKAN&quot;</span>
+<span class="n">msgstr</span> <span class="s2">&quot;Benvenut* su ESTAR&quot;</span>
+</pre></div>
+</div>
+<p>Man mano che si aggiungono stringhe di localizzazione:</p>
+<ol class="simple">
+<li><p>estrarle nel file <code class="docutils literal notranslate"><span class="pre">pot</span></code>: <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">setup.py</span> <span class="pre">extract_messages</span></code></p></li>
+<li><p>aggiornare i cataloghi (file <code class="docutils literal notranslate"><span class="pre">po</span></code>): <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">setup.py</span> <span class="pre">update_catalog</span></code></p></li>
+<li><p>tradurre le stringhe nei file <code class="docutils literal notranslate"><span class="pre">po</span></code></p></li>
+<li><p>compilare le traduzioni (file <code class="docutils literal notranslate"><span class="pre">mo</span></code>): <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">setup.py</span> <span class="pre">compile_catalog</span></code></p></li>
+</ol>
+<blockquote>
+<div><p>ATTENZIONE: per modificarne i file all’interno della cartla <code class="docutils literal notranslate"><span class="pre">i18n/</span></code> è forse necessario modificarne opportunamente i permessi.</p>
+</div></blockquote>
 </section>
 <section id="javascript-personalizzato">
 <h3>Javascript personalizzato<a class="headerlink" href="#javascript-personalizzato" title="Link a questa intestazione">#</a></h3>
-<p>…</p>
+<p>Il codice javascript eseguito da CKAN è suddiviso in moduli indipendenti e un’estensione può registrare un nuovo modulo da fare eseguire in determinate pagine / circostanze.</p>
+<p>Si rimanda alla <a class="reference external" href="https://docs.ckan.org/en/2.9/theming/javascript.html">documentazione ufficiale</a> per tutti i dettagli.</p>
 </section>
 </section>
 <section id="laboratorio">

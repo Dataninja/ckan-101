@@ -440,8 +440,11 @@ title="Print to PDF"
 <li><p>[opzionale] aggiungere un eventuale script di inizializzazione del database in <code class="docutils literal notranslate"><span class="pre">lab/ckan/postgresql/docker-entrypoint-initdb.d</span></code>;</p></li>
 <li><p>[opzionale] aggiungere un eventuale script di inizializzazione in <code class="docutils literal notranslate"><span class="pre">lab/ckan/ckan/docker-entrypoint.d</span></code>;</p></li>
 <li><p>aggiungere i plugin forniti dall’estensione all’elenco della variabile d’ambiente <code class="docutils literal notranslate"><span class="pre">CKAN__PLUGINS</span></code> e le eventuali configurazioni aggiuntive nel file <code class="docutils literal notranslate"><span class="pre">.env</span></code>;</p></li>
-<li><p>rifare la build delle immagini e riavviare i container con <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.ext.yml</span> <span class="pre">up</span> <span class="pre">--build</span> <span class="pre">-d</span></code>.</p></li>
+<li><p>dalla cartella <code class="docutils literal notranslate"><span class="pre">lab/ckan/</span></code> rifare la build delle immagini e riavviare i container con <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.ext.yml</span> <span class="pre">up</span> <span class="pre">--build</span> <span class="pre">-d</span></code>.</p></li>
 </ol>
+<blockquote>
+<div><p>ATTENZIONE: in <code class="docutils literal notranslate"><span class="pre">docker-compose.ext.yml</span></code> viene montato il file di configurazione <code class="docutils literal notranslate"><span class="pre">lab/ckan/solt/schema.xml</span></code> nel container di Solr per applicare le modifiche richieste da ckanext-dcatapit (vedi <a class="reference external" href="https://github.com/geosolutions-it/ckanext-dcatapit#installation">documentazione ufficiale</a> al punto 11).</p>
+</div></blockquote>
 <section id="rimozione">
 <h3>Rimozione<a class="headerlink" href="#rimozione" title="Link a questa intestazione">#</a></h3>
 <p>Per rimuovere un plugin precedentemente attivato è necessario ripercorrere a ritroso i passaggi per la sua installazione, dal punto 5 al punto 1.
@@ -456,20 +459,7 @@ Infine rifare la build delle immagini e riavviare i container.</p>
 </section>
 <section id="sviluppo-di-un-estensione">
 <h2>Sviluppo di un’estensione<a class="headerlink" href="#sviluppo-di-un-estensione" title="Link a questa intestazione">#</a></h2>
-<p>La <a class="reference external" href="https://docs.ckan.org/en/2.9/extensions/tutorial.html">documentazione ufficiale</a> mostra lo sviluppo da zero di un’estensione all’interno di un tutorial per spiegare i vari passaggi necessari per estendere le funzionalità di CKAN.</p>
-<p>Nel nostro caso, la Open Knowledge Foundation descrive una <a class="reference external" href="https://github.com/okfn/docker-ckan#development-mode">modalità di sviluppo</a> direttamente all’interno di un container ottimizzato per questo scopo.</p>
-<ol class="simple">
-<li><p>Fare la build dell’immagine di sviluppo: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-d</span> <span class="pre">docker-compose.dev.yml</span> <span class="pre">build</span> <span class="pre">ckan</span></code></p></li>
-<li><p>Eseguire i container in modalità sviluppo: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-d</span> <span class="pre">docker-compose.dev.yml</span> <span class="pre">build</span> <span class="pre">ckan</span></code></p></li>
-<li><p>Inizializzare la nuova estensione: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.dev.yml</span> <span class="pre">exec</span> <span class="pre">ckan</span> <span class="pre">ckan</span> <span class="pre">generate</span> <span class="pre">extension</span> <span class="pre">--output-dir</span> <span class="pre">/srv/app/src_extensions</span></code></p></li>
-<li><p>Rispondere a tutte le domande</p></li>
-</ol>
-<p>Nella cartella locale <code class="docutils literal notranslate"><span class="pre">/lab/ckan/src</span></code> apparirà la cartella della nuova estensione con nome <code class="docutils literal notranslate"><span class="pre">ckanext-nome_nuova_estensione</span></code>.
-Per modificarne i file all’interno è forse necessario modificare opportunamente i permessi della cartella.</p>
-<ol class="simple">
-<li><p>Aggiungere alla variabile d’ambiente <code class="docutils literal notranslate"><span class="pre">CKAN__PLUGINS</span></code> il nome del plugin fornito dall’estensione appena creata (es. <code class="docutils literal notranslate"><span class="pre">CKAN__PLUGINS=...</span> <span class="pre">nome_nuova_estensione</span></code>).</p></li>
-<li><p>Riavviare il container: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">docker-compose.yml</span> <span class="pre">-f</span> <span class="pre">docker-compose.dev.yml</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">ckan</span></code>.</p></li>
-</ol>
+<p>Si veda la sezione dedicata allo <a class="reference external" href="./themes#sviluppo-di-un-tema">sviluppo di un tema personalizzato</a>.</p>
 </section>
 <section id="laboratorio">
 <h2>Laboratorio<a class="headerlink" href="#laboratorio" title="Link a questa intestazione">#</a></h2>
